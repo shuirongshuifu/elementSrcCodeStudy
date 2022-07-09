@@ -1,24 +1,6 @@
-# demo
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 使用步骤
+1. 下载依赖包
+2. 跑起来
+3. 仿写封装的组件代码在src/components文件夹中
+4. 使用实例在views文件夹中对应的.vue文件里面
+5. 工作不忙的时候，会一点点仿写封装组件哦，如果帮到您了，给个star呗 ^_^
