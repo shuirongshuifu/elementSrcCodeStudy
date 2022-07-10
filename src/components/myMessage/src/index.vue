@@ -21,10 +21,12 @@ export default {
   name: "myMessage",
   props: {
     count: {
+      // 统计次数
       type: Number,
       default: 1,
     },
     cutCount: {
+      // dom消失通知外界函数
       type: Function,
     },
   },
@@ -38,6 +40,7 @@ export default {
       type: "info", // 默认info类型
       typeArr: ["info", "success", "warning", "error"], // 总共4种类型
       iconObj: {
+        // 这里的对应图标，就以 红桃、黑桃、方块、梅花 为例吧
         info: "♥",
         success: "♠",
         warning: "♦",
@@ -48,6 +51,7 @@ export default {
   computed: {
     controlTop() {
       return {
+        // 距离顶部的位置，取决于创建了几个message
         top: `${12 + (this.count - 1) * 60}px`,
       };
     },
@@ -58,6 +62,7 @@ export default {
   methods: {
     // 开始定时器计时，要销毁dom元素
     startTimerFn() {
+      // 时间大于0，才做计时消失隐藏
       if (this.duration > 0) {
         this.timer = setTimeout(() => {
           this.close(); // 达到计时时间，就隐藏这个notice
@@ -70,11 +75,11 @@ export default {
     },
     // 过渡动画消失时，会执行此钩子函数，销毁组件，同时移除dom
     handleAfterLeave() {
+      // 在移除一个dom之前，要先通知外界的计数count减去一个，并让余下的所有dom都往上移动，即更改位置
       this.cutCount();
-      // 在移除一个dom之前，要先通知外界的计数count减去一个
+      // 然后移除dom
       this.$destroy(true);
       this.$el.parentNode.removeChild(this.$el);
-      // 让余下的所有dom都往上移动，同时更改位置
     },
     // 关闭隐藏dom
     close() {
