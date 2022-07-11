@@ -12,7 +12,7 @@
 
 <script>
 // 一种是原型链使用方式，另一种是引入使用方式
-import MyMessage from "@/components/index.js";
+import { MyMessage } from "@/components/index.js";
 export default {
   methods: {
     showMessage1() {
@@ -51,6 +51,7 @@ export default {
       });
     },
     showMessage7() {
+      console.log(MyMessage);
       MyMessage({
         message: "引入使用",
         type: "success",
