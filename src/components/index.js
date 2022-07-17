@@ -3,11 +3,15 @@ import Vue from "vue";
 // 引入各个封装的组件
 import MyMessage from "./myMessage/index";
 import myBadge from "./myBadge/index";
+import myTabs from "./myTabs/index";
+import myTabContent from "./myTabContent/index";
 
 // 将各个封装的组件使用一个数组保存，便于统一注册
 const components = [
     MyMessage,
-    myBadge
+    myBadge,
+    myTabs,
+    myTabContent
 ]
 
 // 使用定义注册函数
