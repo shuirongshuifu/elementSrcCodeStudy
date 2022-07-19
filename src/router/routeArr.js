@@ -12,6 +12,10 @@ const routeArr = [
         component: resolve => require(['@/views/myTabs.vue'], resolve),
     },
     {
+        path: "/myCard",
+        component: resolve => require(['@/views/myCard.vue'], resolve),
+    },
+    {
         path: "/myTooltip",
         component: resolve => require(['@/views/myTooltip.vue'], resolve),
     },

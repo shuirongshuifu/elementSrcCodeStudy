@@ -5,13 +5,15 @@ import MyMessage from "./myMessage/index";
 import myBadge from "./myBadge/index";
 import myTabs from "./myTabs/index";
 import myTabContent from "./myTabContent/index";
+import myCard from "./myCard/index";
 
 // 将各个封装的组件使用一个数组保存，便于统一注册
 const components = [
     MyMessage,
     myBadge,
     myTabs,
-    myTabContent
+    myTabContent,
+    myCard
 ]
 
 // 使用定义注册函数
