@@ -57,7 +57,7 @@ export default {
   display: block;
   margin: 12px 0;
   position: relative;
-  // 缩放0.85倍可以解决一像素问题（一像素看着比实际粗）横线Y缩放
+  // 缩放0.95倍可以解决一像素问题（一像素看着比实际粗）横线Y缩放
   transform: scaleY(0.95);
 }
 // dashed分割线
@@ -78,7 +78,7 @@ export default {
   vertical-align: middle;
   position: relative;
   top: -1px; // 微调一下位置
-  // 缩放0.85倍可以解决一像素问题（一像素看着比实际粗）竖线X缩放
+  // 缩放0.95倍可以解决一像素问题（一像素看着比实际粗）竖线X缩放
   transform: scaleX(0.95);
 }
 // 文本样式
