@@ -19,6 +19,10 @@ const routeArr = [
         path: "/myTooltip",
         component: resolve => require(['@/views/myTooltip.vue'], resolve),
     },
+    {
+        path: "/myDivider",
+        component: resolve => require(['@/views/myDivider.vue'], resolve),
+    },
 ]
 
 export default routeArr

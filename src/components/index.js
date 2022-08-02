@@ -6,6 +6,7 @@ import myBadge from "./myBadge/index";
 import myTabs from "./myTabs/index";
 import myTabContent from "./myTabContent/index";
 import myCard from "./myCard/index";
+import myDivider from "./myDivider/index";
 
 // 将各个封装的组件使用一个数组保存，便于统一注册
 const components = [
@@ -13,7 +14,8 @@ const components = [
     myBadge,
     myTabs,
     myTabContent,
-    myCard
+    myCard,
+    myDivider
 ]
 
 // 使用定义注册函数
