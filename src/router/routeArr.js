@@ -23,6 +23,10 @@ const routeArr = [
         path: "/myDivider",
         component: resolve => require(['@/views/myDivider.vue'], resolve),
     },
+    {
+        path: "/myTag",
+        component: resolve => require(['@/views/myTag.vue'], resolve),
+    },
 ]
 
 export default routeArr
