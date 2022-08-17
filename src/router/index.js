@@ -8,7 +8,7 @@ const router = new VueRouter({
     routes: [
         {
             path: "/",
-            redirect: "/myMessage",
+            component: resolve => require(['@/views/Home.vue'], resolve),
         },
         ...routeArr
     ]

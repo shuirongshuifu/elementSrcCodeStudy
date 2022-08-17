@@ -11,6 +11,10 @@
         active-text-color="#ffd04b"
         router
       >
+        <el-menu-item index="/">
+          <i class="el-icon-s-home"></i>
+          <span slot="title">Home</span>
+        </el-menu-item>
         <el-menu-item
           v-for="(item, index) in routeArr"
           :key="index"
@@ -23,7 +27,13 @@
     </div>
     <div class="right">
       <div class="rightTop">
-        <h5>饿了么源码学习（仿写）</h5>
+        <my-bread customDivide=">>">
+          <my-bread-item :to="{ path: '/' }">首页</my-bread-item>
+          <my-bread-item v-if="$route.path != '/'">{{
+            $route.path.slice(1)
+          }}</my-bread-item>
+        </my-bread>
+        <h5 style="margin-left: 12px">饿了么源码学习（仿写）</h5>
       </div>
       <div class="rightBottom">
         <div class="rightBottomContent">
