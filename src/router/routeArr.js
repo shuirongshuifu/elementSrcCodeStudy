@@ -31,6 +31,10 @@ const routeArr = [
         path: "/myBread",
         component: resolve => require(['@/views/myBread.vue'], resolve),
     },
+    {
+        path: "/myTimeline",
+        component: resolve => require(['@/views/myTimeline.vue'], resolve),
+    },
 ]
 
 export default routeArr

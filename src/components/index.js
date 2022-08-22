@@ -10,6 +10,9 @@ import myDivider from "./myDivider/index";
 import myTag from "./myTag/index";
 import myBread from "./myBread/index";
 import myBreadItem from "./myBreadItem/index";
+import myTimeline from "./myTimeline/index";
+import myTimelineItem from "./myTimelineItem/index";
+
 
 // 将各个封装的组件使用一个数组保存，便于统一注册
 const components = [
@@ -21,7 +24,9 @@ const components = [
     myDivider,
     myTag,
     myBread,
-    myBreadItem
+    myBreadItem,
+    myTimeline,
+    myTimelineItem,
 ]
 
 // 使用定义注册函数
