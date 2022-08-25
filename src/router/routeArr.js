@@ -1,5 +1,9 @@
 const routeArr = [
     {
+        path: "/clickTableCanEdit",
+        component: resolve => require(['@/views/otherViews/clickTableCanEdit.vue'], resolve),
+    },
+    {
         path: "/myMessage",
         component: resolve => require(['@/views/myMessage.vue'], resolve),
     },

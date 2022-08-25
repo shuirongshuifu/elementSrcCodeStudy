@@ -71,7 +71,7 @@ export default {
   box-sizing: border-box;
   display: flex;
   .left {
-    width: 180px;
+    width: 190px;
     height: 100%;
     background-color: #bfa;
     overflow-y: auto;
