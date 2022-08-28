@@ -43,6 +43,10 @@ const routeArr = [
         path: "/myLink",
         component: resolve => require(['@/views/myLink.vue'], resolve),
     },
+    {
+        path: "/myFold",
+        component: resolve => require(['@/views/myFold.vue'], resolve),
+    },
 ]
 
 export default routeArr
