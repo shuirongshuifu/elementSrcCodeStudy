@@ -73,7 +73,7 @@ export default {
   .left {
     width: 190px;
     height: 100%;
-    background-color: #bfa;
+    // background-color: #bfa;
     overflow-y: auto;
     -ms-overflow-style: none;
     overflow: -moz-scrollbars-none;
