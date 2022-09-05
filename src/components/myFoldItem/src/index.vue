@@ -19,6 +19,10 @@
 </template>
 
 <script>
+/**
+ * 注意：my-fold-item组件标签中的内容不支持异步数据，解决方案如下：
+ * https://juejin.cn/post/7137127479969316895#comment
+ * */ 
 import transitionHeight from "@/components/myUtils/transitionHeight/index.vue";
 export default {
   name: "myFoldItem",
