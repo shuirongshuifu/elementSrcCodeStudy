@@ -17,6 +17,7 @@
     "qs": "^6.9.4",
     "register-service-worker": "^1.7.1",
     "vue": "^2.6.12",
+    "vue-popperjs": "^2.3.0",
     "vue-router": "^3.4.9"
   },
   "devDependencies": {
