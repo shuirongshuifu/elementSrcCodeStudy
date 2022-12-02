@@ -55,6 +55,10 @@ const routeArr = [
         path: "/myDrawer",
         component: resolve => require(['@/views/myDrawer.vue'], resolve),
     },
+    {
+        path: "/myDialog",
+        component: resolve => require(['@/views/myDialog.vue'], resolve),
+    },
 ]
 
 export default routeArr
