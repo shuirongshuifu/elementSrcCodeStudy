@@ -56,7 +56,7 @@ const routeArr = [
     },
     {
         path: "/myFold",
-        name: '折叠',
+        name: '手风琴',
         component: resolve => require(['@/views/myFold.vue'], resolve),
     },
     {
