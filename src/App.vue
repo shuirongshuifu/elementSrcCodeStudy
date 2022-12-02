@@ -21,7 +21,7 @@
           :index="item.path"
         >
           <i class="el-icon-eleme"></i>
-          <span slot="title">{{ item.path.slice(1) }}</span>
+          <span slot="title">{{ item.name }}</span>
         </el-menu-item>
       </el-menu>
     </div>
@@ -34,6 +34,22 @@
           }}</my-bread-item>
         </my-bread>
         <h5 style="margin-left: 12px">饿了么源码学习（仿写）</h5>
+        <el-select
+          style="margin-left: 24px"
+          v-model="componentsVal"
+          @change="jumpComponents"
+          filterable
+          size="mini"
+          placeholder="请选择组件"
+        >
+          <el-option
+            v-for="item in routeArr"
+            :key="item.value"
+            :label="item.name"
+            :value="item.path"
+          >
+          </el-option>
+        </el-select>
       </div>
       <div class="rightBottom">
         <div class="rightBottomContent">
@@ -51,6 +67,7 @@ export default {
   data() {
     return {
       routeArr,
+      componentsVal: "",
     };
   },
   methods: {
@@ -59,6 +76,12 @@ export default {
     },
     handleClose(key, keyPath) {
       console.log(key, keyPath);
+    },
+    jumpComponents(path) {
+      this.$router.push({
+        path,
+      });
+      this.componentsVal = "";
     },
   },
 };

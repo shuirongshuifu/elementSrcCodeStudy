@@ -47,7 +47,7 @@ export default {
     zoomCard: Boolean, // 是否放大卡片（hover时）
   },
   mounted() {
-    console.log("this.$slots", this.$slots);
+    // console.log("this.$slots", this.$slots);
   },
 };
 </script>
