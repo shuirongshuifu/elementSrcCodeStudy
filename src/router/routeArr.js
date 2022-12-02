@@ -74,6 +74,11 @@ const routeArr = [
         name: '弹框',
         component: resolve => require(['@/views/myDialog.vue'], resolve),
     },
+    {
+        path: "/myTrend",
+        name: '趋势标识',
+        component: resolve => require(['@/views/myTrend.vue'], resolve),
+    },
 ]
 
 export default routeArr

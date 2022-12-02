@@ -55,7 +55,7 @@ export default {
   width: 100%;
   border-bottom: 1px solid #333; // 默认solid分割线样式
   display: block;
-  margin: 12px 0;
+  margin: 16px 0;
   position: relative;
   // 缩放0.95倍可以解决一像素问题（一像素看着比实际粗）横线Y缩放
   transform: scaleY(0.95);
@@ -85,7 +85,7 @@ export default {
 .text {
   position: absolute;
   padding: 0 12px;
-  color: #333;
+  color: #777; // 这里的颜色也可以自定义哦，作为参数传递
   font-size: 14px;
   transform: translateY(-50%); // y轴移动自身的一半，使其垂直方向居中
   background-color: #fff; // 通过背景色和padding去盖住水平分割线条

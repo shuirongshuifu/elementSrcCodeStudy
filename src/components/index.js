@@ -19,6 +19,7 @@ import mySwitch from "./mySwitch/index";
 import myTooltip from "./myTooltip/index";
 import myDrawer from "./myDrawer/index";
 import myDialog from "./myDialog/index";
+import myTrend from "./myTrend/index";
 
 
 // 将各个封装的组件使用一个数组保存，便于统一注册
@@ -40,7 +41,8 @@ const components = [
     mySwitch,
     myTooltip,
     myDrawer,
-    myDialog
+    myDialog,
+    myTrend
 ]
 
 // 使用定义注册函数
