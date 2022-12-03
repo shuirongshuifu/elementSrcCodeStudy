@@ -44,6 +44,7 @@
 
 <script>
 export default {
+  name:"myFoldName",
   data() {
     return {
       // 手风琴模式的数组项要么没有项，要么只能有一个项

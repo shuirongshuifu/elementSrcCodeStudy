@@ -1,59 +1,18 @@
 <template>
   <div id="app">
     <div class="left">
-      <el-menu
-        :default-active="$route.path"
-        class="el-menu-vertical-demo"
-        @open="handleOpen"
-        @close="handleClose"
-        background-color="#545c64"
-        text-color="#fff"
-        active-text-color="#ffd04b"
-        router
-      >
-        <el-menu-item index="/">
-          <i class="el-icon-s-home"></i>
-          <span slot="title">Home</span>
-        </el-menu-item>
-        <el-menu-item
-          v-for="(item, index) in routeArr"
-          :key="index"
-          :index="item.path"
-        >
-          <i class="el-icon-eleme"></i>
-          <span slot="title">{{ item.name }}</span>
-        </el-menu-item>
-      </el-menu>
+      <left-menu></left-menu>
     </div>
     <div class="right">
-      <div class="rightTop">
-        <my-bread customDivide=">>">
-          <my-bread-item :to="{ path: '/' }">首页</my-bread-item>
-          <my-bread-item v-if="$route.path != '/'">{{
-            $route.path.slice(1)
-          }}</my-bread-item>
-        </my-bread>
-        <h5 style="margin-left: 12px">饿了么源码学习（仿写）</h5>
-        <el-select
-          style="margin-left: 24px"
-          v-model="componentsVal"
-          @change="jumpComponents"
-          filterable
-          size="mini"
-          placeholder="请选择组件"
-        >
-          <el-option
-            v-for="item in routeArr"
-            :key="item.value"
-            :label="item.name"
-            :value="item.path"
-          >
-          </el-option>
-        </el-select>
-      </div>
+      <right-top-bread></right-top-bread>
+      <right-middle-tags></right-middle-tags>
       <div class="rightBottom">
         <div class="rightBottomContent">
-          <router-view></router-view>
+          <transition name="fade-transform" mode="out-in">
+            <keep-alive :include="cachedViews">
+              <router-view></router-view>
+            </keep-alive>
+          </transition>
         </div>
       </div>
     </div>
@@ -61,28 +20,28 @@
 </template>
 
 <script>
-import routeArr from "./router/routeArr";
+/*
+1. 拆分组件
+2. 加入vuex
+3. tag标签(参照163信箱交互去写)
+*/
+import leftMenu from "./layOut/leftMenu";
+import rightTopBread from "./layOut/rightTopBerad";
+import rightMiddleTags from "./layOut/rightMiddleTags";
+import { mapState } from "vuex";
+
 export default {
   name: "App",
-  data() {
-    return {
-      routeArr,
-      componentsVal: "",
-    };
+  components: {
+    leftMenu,
+    rightTopBread,
+    rightMiddleTags,
   },
-  methods: {
-    handleOpen(key, keyPath) {
-      console.log(key, keyPath);
-    },
-    handleClose(key, keyPath) {
-      console.log(key, keyPath);
-    },
-    jumpComponents(path) {
-      this.$router.push({
-        path,
-      });
-      this.componentsVal = "";
-    },
+  computed: {
+    // 辅助函数搭配计算属性，响应式数据
+    ...mapState({
+      cachedViews: (state) => state.tags.cachedViews, // tag子内容下的cachedViews属性
+    }),
   },
 };
 </script>
@@ -93,39 +52,29 @@ export default {
   height: 100vh;
   box-sizing: border-box;
   display: flex;
+  position: relative;
   .left {
-    width: 190px;
+    width: auto;
     height: 100%;
-    // background-color: #bfa;
     overflow-y: auto;
     -ms-overflow-style: none;
     overflow: -moz-scrollbars-none;
-    .el-menu-vertical-demo {
-      width: 100%;
-      height: 100%;
-    }
   }
   .left::-webkit-scrollbar {
     width: 0 !important;
   }
   .right {
+    flex: 1;
     height: 100%;
-    width: calc(100% - 180px);
-    .rightTop {
-      width: 100%;
-      height: 48px;
-      background-color: #cde;
-      display: flex;
-      align-items: center;
-      box-sizing: border-box;
-      padding: 0 12px;
-    }
+    overflow-x: auto; // 加
+
     .rightBottom {
       width: 100%;
-      height: calc(100% - 48px);
+      height: calc(100% - 96px);
       box-sizing: border-box;
       padding: 12px;
       background-color: #f7f7f7;
+
       .rightBottomContent {
         width: 100%;
         height: 100%;
@@ -136,5 +85,21 @@ export default {
       }
     }
   }
+}
+
+/* fade-transform过渡动画 */
+.fade-transform-leave-active,
+.fade-transform-enter-active {
+  transition: all 0.36s;
+}
+
+.fade-transform-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.fade-transform-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
 }
 </style>

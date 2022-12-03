@@ -46,6 +46,7 @@
 
 <script>
 export default {
+  name:"mySwitchName",
   data() {
     return {
       flag1: true,

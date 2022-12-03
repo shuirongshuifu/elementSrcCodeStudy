@@ -79,7 +79,7 @@ export default {
   white-space: nowrap;
   height: auto;
   line-height: 20px;
-  margin: 0 8px 8px 0;
+  /* margin: 0 8px 8px 0; */
 }
 /* 标签关闭小叉号样式 */
 .close-tag {

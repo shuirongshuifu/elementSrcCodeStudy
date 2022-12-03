@@ -22,7 +22,7 @@
 <script>
 /**
  * 本文代码文章链接地址：https://juejin.cn/post/7108542695387168799
- * */ 
+ * */
 
 // 校验函数，比如姓名列单元格最多只能输入6个字符
 function nameMaxLength6(str) {
@@ -40,6 +40,7 @@ function noValidate(params) {
 // 引入继承组件对象，可取其身上的inputC构造函数、或spanC构造函数生成组件dom
 import extendComponents from "../../otherComponents/clickTableCanEdit/data";
 export default {
+  name: "clickTableCanEditName",
   data() {
     return {
       tableData: [

@@ -71,6 +71,7 @@
 
 <script>
 export default {
+  name:"myDrawerName",
   data() {
     return {
       isShowDrawer1: false,

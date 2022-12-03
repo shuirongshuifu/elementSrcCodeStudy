@@ -23,7 +23,7 @@
     >
       <div class="front">
         <div>
-          {{ item.name }}
+          {{ item.path.slice(1) }}
         </div>
         <div>{{ emoji[index] }}</div>
       </div>
@@ -40,6 +40,7 @@
 <script>
 import routeArr from "../router/routeArr";
 export default {
+  name:'HomeName',
   data() {
     return {
       routeArr,
@@ -106,7 +107,7 @@ export default {
   flex-wrap: wrap;
   // justify-content: space-around;
   .cardClass {
-    width: 136px;
+    width: 160px;
     margin-right: 24px;
     margin-bottom: 24px;
   }

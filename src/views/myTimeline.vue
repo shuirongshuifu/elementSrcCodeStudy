@@ -44,6 +44,7 @@
 
 <script>
 export default {
+  name:'myTimelineName',
   data() {
     return {
       reverse: false,

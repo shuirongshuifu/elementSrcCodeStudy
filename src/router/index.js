@@ -8,7 +8,11 @@ const router = new VueRouter({
     routes: [
         {
             path: "/",
+            // name: 'Home',
             component: resolve => require(['@/views/Home.vue'], resolve),
+            // meta: {
+            //     title: "趋势标识"
+            // }
         },
         ...routeArr
     ]

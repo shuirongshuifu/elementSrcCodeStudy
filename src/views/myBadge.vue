@@ -49,6 +49,7 @@
 
 <script>
 export default {
+  name:'myBadgeName',
   data() {
     return {
       isShow: true,

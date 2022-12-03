@@ -7,6 +7,7 @@
     <button @click="showMessage5">弹出5秒关闭</button>
     <button @click="showMessage6">文字居中哦</button>
     <button @click="showMessage7">引入使用</button>
+    <el-input style="width: 180px" size="mini" v-model="kkk"></el-input>
   </div>
 </template>
 
@@ -14,6 +15,12 @@
 // 一种是原型链使用方式，另一种是引入使用方式
 import { MyMessage } from "@/components/index.js";
 export default {
+  data() {
+    return {
+      kkk: "切换数据还在",
+    };
+  },
+  name: "myMessageName",
   methods: {
     showMessage1() {
       this.$myMessage({

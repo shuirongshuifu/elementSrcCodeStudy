@@ -26,3 +26,9 @@
     </my-bread>
   </div>
 </template>
+
+<script>
+export default {
+  name:'myBreadName',
+};
+</script>

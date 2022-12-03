@@ -128,6 +128,7 @@
 
 <script>
 export default {
+  name: "myTootipName",
   data() {
     return {
       disabled: false,

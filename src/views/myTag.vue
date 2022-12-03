@@ -59,6 +59,7 @@
 
 <script>
 export default {
+  name:"myTagName",
   data() {
     return {
       arr: ["标签一", "标签二", "标签三"],

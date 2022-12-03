@@ -18,18 +18,3 @@
     <span>美股变化：<my-trend flag="down" :reverseColor="true" :whole='false'>8%</my-trend></span>
   </div>
 </template>
-
-<style lang='less' scoped>
-.apiLogWrap {
-  width: 100%;
-  height: 100%;
-  background-color: #fff;
-  // box-sizing: border-box;
-  // // 使用弹性盒控制
-  // display: flex;
-  // flex-direction: column;
-  .ww {
-    color: red !important;
-  }
-}
-</style>

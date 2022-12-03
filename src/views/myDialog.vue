@@ -59,6 +59,7 @@
 
 <script>
 export default {
+  name:"myDialogName",
   data() {
     return {
       dialog1: false,

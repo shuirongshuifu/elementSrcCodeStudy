@@ -10,10 +10,13 @@ Vue.use(ElementUI); // 使用饿了么插件包
 
 import router from './router/index' // 引入路由便于使用
 
+import store from "./store"; // vuex
+
 // import './views/components/notice/index' // 引入表示加载之
 import './components/index';
 
 new Vue({
     render: h => h(App),
-    router
+    router,
+    store
 }).$mount('#app')

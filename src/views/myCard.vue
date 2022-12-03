@@ -23,6 +23,12 @@
   </div>
 </template>
 
+<script>
+export default {
+  name:'myCardName',
+};
+</script>
+
 <style lang='less' scoped>
 .box {
   display: flex;

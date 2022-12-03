@@ -52,6 +52,7 @@
 
 <script>
 export default {
+  name:"myLinkName",
   methods: {
     clickThis() {
       console.log("注意：当myLink禁用或有href属性时，点击事件失效");

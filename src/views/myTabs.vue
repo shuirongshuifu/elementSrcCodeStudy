@@ -35,6 +35,7 @@
 
 <script>
 export default {
+  name:"myTabsName",
   data() {
     return {
       activeName: "sunwukong",
