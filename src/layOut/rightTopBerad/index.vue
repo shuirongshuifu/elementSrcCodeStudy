@@ -30,6 +30,9 @@
       >
       </el-option>
     </el-select>
+    <my-link class="jumpC" @click="githubFn" type="success" icon="el-icon-aim"
+      >GitHub仓库</my-link
+    >
   </div>
 </template>
 
@@ -59,6 +62,9 @@ export default {
       });
       this.componentsVal = "";
     },
+    githubFn() {
+      window.open("https://github.com/shuirongshuifu");
+    },
   },
 };
 </script>
@@ -72,10 +78,16 @@ export default {
   align-items: center;
   box-sizing: border-box;
   padding: 0 12px;
+  position: relative;
   .iii {
     font-size: 36px;
     cursor: pointer;
     margin-right: 18px;
+  }
+  .jumpC {
+    position: absolute;
+    top: 10px;
+    right: 24px;
   }
 }
 </style>
