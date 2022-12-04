@@ -6,5 +6,8 @@
 5. 工作不忙的时候，会慢慢增加自己仿写的封装组件哦，如果帮到您了，给个star呗 ^_^
 6. 本仓库代码主要是思路，具体大家可以根据自家公司的情况进行增删功能
 
-![介绍](https://user-images.githubusercontent.com/35264821/205286298-acdc318b-82bd-4f45-8769-a7baaa65c2ac.gif)
+### 演示效果
 
+网址：http://ashuai.work:8888/#/
+
+截图：![介绍](https://user-images.githubusercontent.com/35264821/205479444-b64d3864-cb44-4562-952d-5fe9080fa8e2.png)
