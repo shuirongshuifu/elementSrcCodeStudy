@@ -143,6 +143,15 @@ const routeArr = [
             keepAlive: false,
         }
     },
+    {
+        path: "/myBack",
+        name: 'myBackName',
+        component: resolve => require(['@/views/myBack.vue'], resolve),
+        meta: {
+            title: '回到顶部',
+            keepAlive: false,
+        }
+    },
 ]
 
 export default routeArr
