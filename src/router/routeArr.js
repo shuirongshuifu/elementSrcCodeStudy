@@ -152,6 +152,15 @@ const routeArr = [
             keepAlive: false,
         }
     },
+    {
+        path: "/myProgress1",
+        name: 'myProgress1Name',
+        component: resolve => require(['@/views/myProgress1.vue'], resolve),
+        meta: {
+            title: '横线进度条',
+            keepAlive: false,
+        }
+    },
 ]
 
 export default routeArr
