@@ -161,6 +161,15 @@ const routeArr = [
             keepAlive: false,
         }
     },
+    {
+        path: "/myRightMenu",
+        name: 'myRightMenuName',
+        component: resolve => require(['@/views/myRightMenu.vue'], resolve),
+        meta: {
+            title: '右键菜单',
+            keepAlive: false,
+        }
+    },
 ]
 
 export default routeArr
