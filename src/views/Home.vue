@@ -108,7 +108,6 @@ export default {
   },
   methods: {
     jump(path) {
-      console.log(111);
       this.$router.push({
         path,
       });

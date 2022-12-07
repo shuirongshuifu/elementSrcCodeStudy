@@ -71,6 +71,33 @@ const mutations = {
         }
 
     },
+    DELETE_ALLVIEW(state) {
+        state.visitedViews = []
+        state.cachedViews = []
+        router.replace({
+            path: '/'
+        })
+    },
+    DELETE_OTHERVIEW(state, { name }) {
+        /**
+         * 1. 关闭除visitedViews数组中除自己以外的数据
+         * */
+        let i = state.visitedViews.findIndex((item) => {
+            return item.name == name
+        })
+        let keepObj = { ...state.visitedViews[i] } // 拷贝一份
+        state.visitedViews = [keepObj] // 清空，并只保留这一份
+        router.push({ path: keepObj.path }) // 并跳转到这一份路由中
+        /**
+         * 2. 若自己不在cachedViews缓存中，直接清空缓存
+         *    若自己在缓存中，将缓存中除了自己以外的都清掉
+         * */
+        if (state.cachedViews.includes(name)) { // 包含只保留自己
+            state.cachedViews = [name]
+        } else {
+            state.cachedViews = [] // 不包含直接清空
+        }
+    }
 }
 
 const actions = {
@@ -80,6 +107,12 @@ const actions = {
     delete_view({ commit }, name) {
         commit("DELETE_VIEW", name);
     },
+    delete_allview({ commit }) {
+        commit("DELETE_ALLVIEW")
+    },
+    delete_otherview({ commit }, name) {
+        commit("DELETE_OTHERVIEW", name)
+    }
 }
 
 

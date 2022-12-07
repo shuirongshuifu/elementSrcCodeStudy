@@ -21,6 +21,7 @@
     <div class="normalDom" @contextmenu.prevent="onContextmenu">区域内右键</div>
     <!-- 右键菜单 -->
     <my-right-menu
+      :class-index="1"
       :rightclickInfo="rightclickInfo"
       @copy="copy"
       @look="look"
@@ -83,9 +84,9 @@ export default {
             params: { row, column, event },
             icoName: "el-icon-document-copy",
             btnName: "复制数据",
-            divided: true,
-            disabled: true,
-            children: [],
+            // divided: true,
+            // disabled: true,
+            // children: [],
           },
           {
             fnName: "look",
@@ -143,34 +144,15 @@ export default {
         menulists: [
           {
             fnName: "copy",
-            params: "复制copy",
-            icoName: "el-icon-document-copy",
-            btnName: "复制数据",
+            params: "代码修仙",
+            icoName: "el-icon-star-on",
+            btnName: "代码修仙",
           },
           {
             fnName: "look",
-            params: "查看look",
-            icoName: "el-icon-view",
-            btnName: "查看行数据",
-          },
-          {
-            fnName: "edit",
-            params: "编辑edit",
-            icoName: "el-icon-edit",
-            btnName: "编辑行数据",
-          },
-          {
-            fnName: "delete",
-            params: "删除delete",
-            icoName: "el-icon-delete",
-            btnName: "删除行数据",
-            disabled: true,
-          },
-          {
-            fnName: "refresh",
-            params: "刷新refresh",
-            icoName: "el-icon-refresh",
-            btnName: "刷新页面",
+            params: "路漫漫",
+            icoName: "el-icon-star-off",
+            btnName: "路漫漫",
           },
         ],
       };

@@ -11,6 +11,11 @@
     >
     <!-- 非首页 -->
     <my-tag
+      @contextmenu.native.prevent="
+        (e) => {
+          onContextmenu(e, item);
+        }
+      "
       class="selfClass"
       style="margin-right: 12px; cursor: pointer"
       v-for="(item, index) in visitedViews"
@@ -22,6 +27,14 @@
       :type="item.name == $route.name ? 'success' : 'info'"
       >{{ item.title }}</my-tag
     >
+    <!-- 右键菜单 -->
+    <my-right-menu
+      :class-index="0"
+      :rightclickInfo="rightclickInfo"
+      @closeCurrent="closeCurrent"
+      @closeOther="closeOther"
+      @closeAll="closeAll"
+    ></my-right-menu>
   </div>
 </template>
 
@@ -30,6 +43,11 @@
 import Sortable from "sortablejs";
 import { mapState } from "vuex";
 export default {
+  data() {
+    return {
+      rightclickInfo: {}, // 关闭当前，关闭其他，全部关闭
+    };
+  },
   computed: {
     ...mapState({
       visitedViews: (state) => state.tags.visitedViews,
@@ -45,6 +63,48 @@ export default {
     this.columnDropInit();
   },
   methods: {
+    // 普通dom右键
+    onContextmenu(e, item) {
+      // console.log("e", e, item);
+      this.rightclickInfo = {
+        position: {
+          x: e.clientX,
+          y: e.clientY,
+        },
+        menulists: [
+          {
+            fnName: "closeCurrent",
+            params: item,
+            icoName: "el-icon-error",
+            btnName: "关闭当前",
+          },
+          {
+            fnName: "closeOther",
+            params: item,
+            icoName: "el-icon-circle-close",
+            btnName: "关闭其他",
+          },
+          {
+            fnName: "closeAll",
+            params: item,
+            icoName: "el-icon-close",
+            btnName: "全部关闭",
+          },
+        ],
+      };
+    },
+    // 关闭当前
+    closeCurrent(params) {
+      this.handleClose(params);
+    },
+    // 关闭其他
+    closeOther(params) {
+      this.$store.dispatch("tags/delete_otherview", { name: params.name });
+    },
+    // 全部关闭（只保留一个首页）
+    closeAll(params) {
+      this.$store.dispatch("tags/delete_allview");
+    },
     addTags(newRoute, oldRoute) {
       // 路由表中的name都要写的
       if (newRoute.name) {
@@ -56,12 +116,10 @@ export default {
       this.$router.push({
         path: item.path,
       });
-      // console.log(111, item);
     },
     handleClose(item) {
       let isCurrent = item.name == this.$route.name; // 特别的情况注意，点击的是否是自己
       this.$store.dispatch("tags/delete_view", { name: item.name, isCurrent });
-      // console.log("删除", isCurrent);
     },
     columnDropInit() {
       // return

@@ -41,6 +41,11 @@ export default {
         };
       },
     },
+    // 重要参数，用于标识是哪个右键菜单dom元素
+    classIndex: {
+      type: Number,
+      default: 0,
+    },
   },
   watch: {
     // 监听右键点击时点击位置的变化，只要变化了，就弹出右键菜单供用户点击操作
@@ -49,7 +54,12 @@ export default {
       let y = val.y; // 获取y轴坐标
       let innerWidth = window.innerWidth; // 获取页面可是区域宽度，即页面的宽度
       let innerHeight = window.innerHeight; // 获取可视区域高度，即页面的高度
-      let menu = document.querySelector(".table-right-menu");
+      /**
+       * 注意，这里要使用getElementsByClassName去选中对应dom，因为右键菜单组件可能被多处使用
+       * classIndex标识就是去找到对应的那个右键菜单组件的，需要加的
+       * */ 
+      let menu =
+        document.getElementsByClassName("table-right-menu")[this.classIndex]; 
       menu.style.display = "block";
       let menuHeight = this.rightclickInfo.menulists.length * 30; // 菜单容器高
       let menuWidth = 180; // 菜单容器宽
@@ -66,7 +76,8 @@ export default {
     hide(e) {
       if (e.button === 0) {
         // 0是左键、1是滚轮按钮或中间按钮（若有）、2鼠标右键
-        let menu = document.querySelector(".table-right-menu");
+        let menu =
+          document.getElementsByClassName("table-right-menu")[this.classIndex]; // 同样的精确查找
         menu.style.display = "none"; // 菜单关闭
         document.removeEventListener("mouseup", this.hide); // 及时解绑监听事件
       }
