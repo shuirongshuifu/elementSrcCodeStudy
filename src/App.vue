@@ -29,7 +29,7 @@ import leftMenu from "./layOut/leftMenu";
 import rightTopBread from "./layOut/rightTopBerad";
 import rightMiddleTags from "./layOut/rightMiddleTags";
 import { mapState } from "vuex";
-
+import { IsPhone } from "./utils/index";
 export default {
   name: "App",
   components: {
@@ -42,6 +42,11 @@ export default {
     ...mapState({
       cachedViews: (state) => state.tags.cachedViews, // tag子内容下的cachedViews属性
     }),
+  },
+  mounted() {
+    if (IsPhone()) {
+      this.$store.dispatch("menu/fold_menu");
+    }
   },
 };
 </script>

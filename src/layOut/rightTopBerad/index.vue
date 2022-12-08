@@ -5,7 +5,7 @@
       :class="isCollapse ? 'el-icon-s-unfold' : 'el-icon-s-fold'"
       class="iii"
     ></i>
-    <my-bread customDivide=">>">
+    <my-bread style="margin-left: 6px" v-if="!IsPhone" customDivide=">>">
       <my-bread-item :to="{ path: '/' }">首页</my-bread-item>
       <my-bread-item v-if="$route.path != '/'"
         >{{ $route.path.slice(1) }}&nbsp;{{
@@ -13,14 +13,16 @@
         }}</my-bread-item
       >
     </my-bread>
-    <h5 style="margin-left: 12px">饿了么源码学习（仿写）</h5>
     <el-select
-      style="margin-left: 24px"
+      class="elSelect"
+      :style="{
+        width: IsPhone ? '120px' : 'auto',
+      }"
       v-model="componentsVal"
       @change="jumpComponents"
       filterable
       size="mini"
-      placeholder="请选择组件"
+      placeholder="饿了么源码学习（仿写）"
     >
       <el-option
         v-for="item in routeArr"
@@ -30,7 +32,12 @@
       >
       </el-option>
     </el-select>
-    <my-link class="jumpC" @click="githubFn" type="success" icon="el-icon-aim"
+    <my-link
+      v-if="showFn()"
+      class="jumpC"
+      @click="githubFn"
+      type="success"
+      icon="el-icon-aim"
       >GitHub仓库</my-link
     >
   </div>
@@ -44,6 +51,7 @@ export default {
     return {
       componentsVal: "",
       routeArr,
+      IsPhone: this.IsPhone(),
     };
   },
   computed: {
@@ -65,6 +73,12 @@ export default {
     githubFn() {
       window.open("https://github.com/shuirongshuifu");
     },
+    showFn() {
+      if (this.IsPhone & !this.isCollapse) {
+        return false;
+      }
+      return true;
+    },
   },
 };
 </script>
@@ -82,12 +96,16 @@ export default {
   .iii {
     font-size: 36px;
     cursor: pointer;
-    margin-right: 18px;
+  }
+  .elSelect {
+    margin: 0 12px;
   }
   .jumpC {
     position: absolute;
     top: 10px;
     right: 24px;
+    color: #1d7dfa;
+    font-weight: 700;
   }
 }
 </style>
