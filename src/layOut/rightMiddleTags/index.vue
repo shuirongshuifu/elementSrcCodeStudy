@@ -1,40 +1,44 @@
 <template>
-  <div class="rightMiddleTags" id="rightMiddleTags">
-    <!-- 首页 -->
-    <my-tag
-      class="selfClass"
-      sizeType="medium"
-      type="info"
-      @click="handleClick({ path: '/' })"
-      :type="$route.path === '/' ? 'success' : 'info'"
-      >首页</my-tag
-    >
-    <!-- 非首页 -->
-    <my-tag
-      @contextmenu.native.prevent="
-        (e) => {
-          onContextmenu(e, item);
-        }
-      "
-      class="selfClass"
-      style="margin-right: 12px; cursor: pointer"
-      v-for="(item, index) in visitedViews"
-      :key="item.name"
-      sizeType="medium"
-      @click="handleClick(item)"
-      @close="handleClose(item)"
-      closable
-      :type="item.name == $route.name ? 'success' : 'info'"
-      >{{ item.title }}</my-tag
-    >
-    <!-- 右键菜单 -->
-    <my-right-menu
-      :class-index="0"
-      :rightclickInfo="rightclickInfo"
-      @closeCurrent="closeCurrent"
-      @closeOther="closeOther"
-      @closeAll="closeAll"
-    ></my-right-menu>
+  <div data-simplebar data-simplebar-auto-hide="true" class="rightMiddleTags" id="rightMiddleTags">
+    <simplebar>
+      <div class="tagsBox">
+        <!-- 首页 -->
+        <my-tag
+          class="selfClass"
+          sizeType="medium"
+          type="info"
+          @click="handleClick({ path: '/' })"
+          :type="$route.path === '/' ? 'success' : 'info'"
+          >首页</my-tag
+        >
+        <!-- 非首页 -->
+        <my-tag
+          @contextmenu.native.prevent="
+            (e) => {
+              onContextmenu(e, item);
+            }
+          "
+          class="selfClass"
+          style="margin-right: 12px; cursor: pointer"
+          v-for="(item, index) in visitedViews"
+          :key="item.name"
+          sizeType="medium"
+          @click="handleClick(item)"
+          @close="handleClose(item)"
+          closable
+          :type="item.name == $route.name ? 'success' : 'info'"
+          >{{ item.title }}</my-tag
+        >
+      </div>
+      <!-- 右键菜单 -->
+      <my-right-menu
+        :class-index="0"
+        :rightclickInfo="rightclickInfo"
+        @closeCurrent="closeCurrent"
+        @closeOther="closeOther"
+        @closeAll="closeAll"
+      ></my-right-menu>
+    </simplebar>
   </div>
 </template>
 
@@ -42,7 +46,12 @@
 // 引入sortablejs插件，拖拽主要靠的是这个插件
 import Sortable from "sortablejs";
 import { mapState } from "vuex";
+import simplebar from "simplebar-vue";
+import "simplebar/dist/simplebar.min.css";
 export default {
+  components: {
+    simplebar,
+  },
   data() {
     return {
       rightclickInfo: {}, // 关闭当前，关闭其他，全部关闭
@@ -151,23 +160,29 @@ export default {
 <style lang='less' scoped>
 .rightMiddleTags {
   width: 100%;
-  height: 48px;
   background-color: #fff;
-  display: flex;
-  align-items: center;
   box-sizing: border-box;
   padding: 0 12px;
   overflow-x: auto;
-  .selfClass {
-    margin-right: 12px;
-    cursor: pointer;
-    transition: all 0.3s;
+  .tagsBox {
+    height: 48px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    .selfClass {
+      margin-right: 12px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .selfClass:hover {
+      color: #67c23a;
+    }
+    .selfClass:active {
+      color: #67c23a;
+    }
   }
-  .selfClass:hover {
-    color: #67c23a;
-  }
-  .selfClass:active {
-    color: #67c23a;
+  /deep/ .simplebar-scrollbar::before {
+    background-color: #cde !important;
   }
 }
 </style>
