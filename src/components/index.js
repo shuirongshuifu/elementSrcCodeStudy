@@ -23,6 +23,7 @@ import myTrend from "./myTrend/index";
 import myBack from "./myBack/index";
 import myProgress1 from "./myProgress1/index";
 import myRightMenu from "./myRightMenu/index";
+import myTree from "./myTree/index";
 
 
 // 将各个封装的组件使用一个数组保存，便于统一注册
@@ -48,7 +49,8 @@ const components = [
     myTrend,
     myBack,
     myProgress1,
-    myRightMenu
+    myRightMenu,
+    myTree
 ]
 
 // 使用定义注册函数

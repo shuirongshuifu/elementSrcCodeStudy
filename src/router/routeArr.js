@@ -170,6 +170,15 @@ const routeArr = [
             keepAlive: false,
         }
     },
+    {
+        path: "/myTree",
+        name: 'myTreeName',
+        component: resolve => require(['@/views/myTree.vue'], resolve),
+        meta: {
+            title: '树组件',
+            keepAlive: false,
+        }
+    },
 ]
 
 export default routeArr
