@@ -164,6 +164,8 @@ export default {
   box-sizing: border-box;
   padding: 0 12px;
   overflow-x: auto;
+  position: relative;
+  z-index: 999;
   .tagsBox {
     height: 48px;
     width: 100%;
