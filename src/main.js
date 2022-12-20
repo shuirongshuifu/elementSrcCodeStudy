@@ -12,8 +12,10 @@ import router from './router/index' // 引入路由便于使用
 
 import store from "./store"; // vuex
 
-// import './views/components/notice/index' // 引入表示加载之
-import './components/index';
+import './components/index'; // 引入各个组件用于使用
+
+import install from './directives' // 引入并使用自定义指令
+Vue.use(install)
 
 new Vue({
     render: h => h(App),

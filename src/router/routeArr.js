@@ -179,6 +179,15 @@ const routeArr = [
             keepAlive: false,
         }
     },
+    {
+        path: "/myDirectives",
+        name: 'myDirectivesName',
+        component: resolve => require(['@/views/myDirectives.vue'], resolve),
+        meta: {
+            title: '自定义指令',
+            keepAlive: false,
+        }
+    },
 ]
 
 export default routeArr
