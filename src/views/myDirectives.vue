@@ -13,6 +13,7 @@
 
 <script>
 export default {
+  name: "myDirectivesName",
   data() {
     return {
       val: "加上v-copy指令,点击即可复制",
