@@ -79,7 +79,7 @@ export default {
         (this.$slots.default[0].text && !this.rightIcon)
       ) {
         return {
-          paddingRight: "4px",
+          paddingRight: "1px",
         };
       }
       // 有图标，有文字，图标在右侧
@@ -88,7 +88,7 @@ export default {
         (this.$slots.default[0].text && this.rightIcon)
       ) {
         return {
-          paddingLeft: "4px",
+          paddingLeft: "1px",
         };
       }
     },
