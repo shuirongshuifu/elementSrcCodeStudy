@@ -193,7 +193,7 @@ const routeArr = [
         name: 'myButtonName',
         component: resolve => require(['@/views/myButton.vue'], resolve),
         meta: {
-            title: '自定义指令',
+            title: '按钮',
             keepAlive: false,
         }
     },
