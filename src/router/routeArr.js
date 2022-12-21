@@ -188,6 +188,15 @@ const routeArr = [
             keepAlive: false,
         }
     },
+    {
+        path: "/myButton",
+        name: 'myButtonName',
+        component: resolve => require(['@/views/myButton.vue'], resolve),
+        meta: {
+            title: '自定义指令',
+            keepAlive: false,
+        }
+    },
 ]
 
 export default routeArr
