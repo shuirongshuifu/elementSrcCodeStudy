@@ -1,0 +1,28 @@
+.loadClass {
+    /* 宽高百分百 */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* 默认背景色和颜色 */
+    background-color: rgba(255, 255, 255, 0.99);
+    color: #0b6ed0;
+    /* 透明度过渡使用搭配display:none; */
+    opacity: 0.8;
+    transition: all 0.3s;
+    /* 禁止文字选择 */
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 通过透明度实现过渡动画 */
+.load-hide {
+    opacity: 0;
+}
+
+.loadClass>i {
+    margin-right: 4px;
+}

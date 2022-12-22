@@ -197,6 +197,15 @@ const routeArr = [
             keepAlive: false,
         }
     },
+    {
+        path: "/myLoad",
+        name: 'myLoadName',
+        component: resolve => require(['@/views/myLoad.vue'], resolve),
+        meta: {
+            title: '加载中',
+            keepAlive: false,
+        }
+    },
 ]
 
 export default routeArr

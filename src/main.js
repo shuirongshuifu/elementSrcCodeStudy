@@ -13,6 +13,7 @@ import router from './router/index' // 引入路由便于使用
 import store from "./store"; // vuex
 
 import './components/index'; // 引入各个组件用于使用
+import './otherComponents/load/index.js'
 
 import install from './directives' // 引入并使用自定义指令
 Vue.use(install)

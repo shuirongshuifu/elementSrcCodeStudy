@@ -46,6 +46,7 @@
 
 <script>
 export default {
+  name: "myButtonName",
   data() {
     return {
       loadingF: false,
