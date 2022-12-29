@@ -1,5 +1,6 @@
 <template>
   <div class="homeWrap">
+    <github-link class="githubLinkC"></github-link>
     <my-card
       v-for="(item, index) in routeArr"
       :key="index"
@@ -39,8 +40,12 @@
 
 <script>
 import routeArr from "../router/routeArr";
+import githubLink from "@/otherComponents/githubLink/index.vue";
 export default {
-  name:'HomeName',
+  name: "HomeName",
+  components: {
+    githubLink,
+  },
   data() {
     return {
       routeArr,
@@ -64,16 +69,16 @@ export default {
         "😴",
         "🤠",
         "😎",
-        '😬',
-        '😴',
-        '🤕',
-        '🥳',
-        '🤓',
-        '🤓',
-        '😎',
-        '😮',
-        '🥱',
-        '😓',
+        "😬",
+        "😴",
+        "🤕",
+        "🥳",
+        "🤓",
+        "🤓",
+        "😎",
+        "😮",
+        "🥱",
+        "😓",
       ],
       yanWords: [
         "(ง •̀_•́)ง",
@@ -120,7 +125,13 @@ export default {
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
-  // justify-content: space-around;
+  position: relative;
+  .githubLinkC {
+    position: absolute;
+    top: -8px;
+    right: -9px;
+    z-index: 9;
+  }
   .cardClass {
     width: 160px;
     margin-right: 24px;

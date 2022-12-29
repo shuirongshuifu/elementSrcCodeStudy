@@ -1,6 +1,12 @@
 @charset "utf-8";
 
 /* CSS Document */
+
+/* 一键改变背景色（css变量方式） */
+:root {
+    --theme_bgColor: #fff;
+}
+
 html,
 body,
 ul,

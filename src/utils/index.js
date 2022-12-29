@@ -12,3 +12,18 @@ export function IsPhone() {
 
 // 原型注册便于访问
 Vue.prototype.IsPhone = IsPhone
+
+// 获取主题颜色
+export function getThemeColor() {
+    // 有缓存用缓存，没缓存用默认
+    let cache_theme_bgColor = sessionStorage.getItem('theme_bgColor')
+    if (cache_theme_bgColor) {
+        document.documentElement.style.setProperty("--theme_bgColor", cache_theme_bgColor);
+        return cache_theme_bgColor
+    } else {
+        let theme_bgColor = getComputedStyle(
+            document.documentElement
+        ).getPropertyValue("--theme_bgColor")
+        return theme_bgColor
+    }
+}

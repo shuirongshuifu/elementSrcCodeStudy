@@ -32,27 +32,44 @@
       >
       </el-option>
     </el-select>
-    <my-link
-      v-if="showFn()"
-      class="jumpC"
-      @click="githubFn"
-      type="success"
-      icon="el-icon-aim"
-      >GitHub仓库</my-link
-    >
+    <my-switch
+      v-model="isNight"
+      active-color="#2F2F2F"
+      inactive-color="#ddd"
+      openText="☾"
+      closeText="☼"
+      size="small"
+    ></my-switch>
+    
   </div>
 </template>
 
 <script>
 import routeArr from "@/router/routeArr.js";
 import { mapState } from "vuex";
+import { getThemeColor } from "@/utils";
 export default {
   data() {
     return {
       componentsVal: "",
       routeArr,
       IsPhone: this.IsPhone(),
+      isNight: sessionStorage.getItem("isNight") == "true" ? true : false,
     };
+  },
+  watch: {
+    isNight(newVal) {
+      if (newVal) {
+        document.documentElement.style.setProperty("--theme_bgColor", "#000");
+        sessionStorage.setItem("theme_bgColor", "#000");
+        sessionStorage.setItem("isNight", "true");
+      } else {
+        document.documentElement.style.setProperty("--theme_bgColor", "#fff");
+        sessionStorage.setItem("theme_bgColor", "#fff");
+        sessionStorage.setItem("isNight", "false");
+      }
+      this.$store.state.menu.theme_bgColor = getThemeColor();
+    },
   },
   computed: {
     ...mapState({
@@ -70,15 +87,6 @@ export default {
       });
       this.componentsVal = "";
     },
-    githubFn() {
-      window.open("https://github.com/shuirongshuifu");
-    },
-    showFn() {
-      if (this.IsPhone & !this.isCollapse) {
-        return false;
-      }
-      return true;
-    },
   },
 };
 </script>
@@ -87,25 +95,20 @@ export default {
 .rightTop {
   width: 100%;
   height: 48px;
-  background-color: #cde;
+  background-color: var(--theme_bgColor);
   display: flex;
   align-items: center;
   box-sizing: border-box;
   padding: 0 12px;
   position: relative;
+  z-index: 1000;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   .iii {
-    font-size: 36px;
+    font-size: 24px;
     cursor: pointer;
   }
   .elSelect {
     margin: 0 12px;
-  }
-  .jumpC {
-    position: absolute;
-    top: 10px;
-    right: 24px;
-    color: #1d7dfa;
-    font-weight: 700;
   }
 }
 </style>

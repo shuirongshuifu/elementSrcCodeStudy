@@ -69,7 +69,7 @@ export default {
     },
   },
   mounted() {
-    this.columnDropInit();
+    // this.columnDropInit();
   },
   methods: {
     // 普通dom右键
@@ -160,12 +160,13 @@ export default {
 <style lang='less' scoped>
 .rightMiddleTags {
   width: 100%;
-  background-color: #fff;
+  background-color: var(--theme_bgColor);
   box-sizing: border-box;
   padding: 0 12px;
   overflow-x: auto;
   position: relative;
   z-index: 999;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   .tagsBox {
     height: 48px;
     width: 100%;

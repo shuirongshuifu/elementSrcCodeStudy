@@ -144,7 +144,7 @@ export default {
   height: 100%;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: 1200;
   overflow: hidden;
   .drawerContent {
     // 搭配定位的方式控制在上下左右的那个方位

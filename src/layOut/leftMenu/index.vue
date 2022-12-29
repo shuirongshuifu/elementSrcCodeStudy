@@ -5,11 +5,11 @@
       class="el-menu-vertical-demo"
       @open="handleOpen"
       @close="handleClose"
-      background-color="#545c64"
-      text-color="#fff"
-      active-text-color="#ffd04b"
+      :background-color="theme_bgColor"
       router
       :collapse="isCollapse"
+      text-color="auto"
+      active-text-color="auto"
     >
       <el-menu-item index="/">
         <i class="el-icon-s-home"></i>
@@ -30,6 +30,7 @@
 <script>
 import routeArr from "@/router/routeArr.js";
 import { mapState } from "vuex";
+import { getThemeColor } from "@/utils";
 export default {
   data() {
     return {
@@ -40,7 +41,18 @@ export default {
     // 辅助函数搭配计算属性，响应式数据
     ...mapState({
       isCollapse: (state) => state.menu.isCollapse, // menu子内容下的isCollapse属性
+      theme_bgColor: (state) => state.menu.theme_bgColor, // menu子内容下的主题颜色
     }),
+  },
+  mounted() {
+    /**
+     * 获取css变量函数的值的方法：getComputedStyle搭配getPropertyValue使用
+     * */
+    this.$store.state.menu.theme_bgColor = getThemeColor();
+    /**
+     * 修改css变量函数的值的方法
+     * */
+    // document.documentElement.style.setProperty("--theme_bgColor", "green");
   },
   methods: {
     handleOpen(key, keyPath) {
@@ -56,5 +68,11 @@ export default {
 <style>
 .el-menu:not(.el-menu--collapse) {
   width: 180px;
+}
+.el-menu-item.is-active {
+  background-color: #ccddee !important;
+}
+.el-menu-item:hover {
+  background-color: #ccddee !important;
 }
 </style>

@@ -1,5 +1,6 @@
 const state = {
     isCollapse: false,
+    theme_bgColor: ''
 };
 
 const mutations = {
