@@ -186,7 +186,7 @@ export default {
 
 /deep/ .drawC {
   .drawerContent {
-    width: 240px !important;
+    width: 280px !important;
   }
   .DrawItem {
     box-sizing: border-box;

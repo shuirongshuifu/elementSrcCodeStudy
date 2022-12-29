@@ -206,6 +206,15 @@ const routeArr = [
             keepAlive: false,
         }
     },
+    {
+        path: "/myDrag",
+        name: 'dragName',
+        component: resolve => require(['@/views/myDrag.vue'], resolve),
+        meta: {
+            title: '拖拽',
+            keepAlive: false,
+        }
+    },
 ]
 
 export default routeArr

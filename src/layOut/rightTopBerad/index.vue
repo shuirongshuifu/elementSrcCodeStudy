@@ -40,7 +40,14 @@
       closeText="☼"
       size="small"
     ></my-switch>
-    
+    <i
+      :class="[
+        'el-icon-full-screen',
+        'iii2',
+        isFullScreen ? 'full' : 'notFull',
+      ]"
+      @click="fullScreenHandle"
+    ></i>
   </div>
 </template>
 
@@ -55,6 +62,7 @@ export default {
       routeArr,
       IsPhone: this.IsPhone(),
       isNight: sessionStorage.getItem("isNight") == "true" ? true : false,
+      isFullScreen: false, // 是否是全屏状态
     };
   },
   watch: {
@@ -87,6 +95,43 @@ export default {
       });
       this.componentsVal = "";
     },
+    // 全屏切换
+    fullScreenHandle() {
+      this.isFullScreen = !this.isFullScreen;
+      if (this.isFullScreen) {
+        this.enterFullScreen(); // 进入全屏
+      } else {
+        this.exitFullscreen(); // 退出全屏
+      }
+    },
+    // 进入全屏
+    enterFullScreen() {
+      // 获取父组件的dom元素
+      const parentNode = this.$parent.$el;
+      // 进入全屏
+      if (parentNode.requestFullscreen) {
+        parentNode.requestFullscreen();
+      } else if (parentNode.webkitRequestFullScreen) {
+        parentNode.webkitRequestFullScreen();
+      } else if (parentNode.mozRequestFullScreen) {
+        parentNode.mozRequestFullScreen();
+      } else if (parentNode.msRequestFullscreen) {
+        // IE11
+        parentNode.msRequestFullscreen();
+      }
+    },
+    // 退出全屏
+    exitFullscreen() {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.webkitCancelFullScreen) {
+        document.webkitCancelFullScreen();
+      } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+      } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+      }
+    },
   },
 };
 </script>
@@ -109,6 +154,19 @@ export default {
   }
   .elSelect {
     margin: 0 12px;
+  }
+  .iii2 {
+    color: #666;
+    cursor: pointer;
+    margin-left: 12px;
+    transition: all 0.3s;
+    font-size: 20px;
+  }
+  .full:hover {
+    transform: scale(0.85);
+  }
+  .notFull:hover {
+    transform: scale(1.2);
   }
 }
 </style>
