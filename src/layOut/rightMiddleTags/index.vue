@@ -1,5 +1,11 @@
 <template>
-  <div data-simplebar data-simplebar-auto-hide="true" class="rightMiddleTags" id="rightMiddleTags">
+  <div
+    v-show="isShowTags"
+    data-simplebar
+    data-simplebar-auto-hide="true"
+    class="rightMiddleTags"
+    id="rightMiddleTags"
+  >
     <simplebar>
       <div class="tagsBox">
         <!-- 首页 -->
@@ -60,6 +66,7 @@ export default {
   computed: {
     ...mapState({
       visitedViews: (state) => state.tags.visitedViews,
+      isShowTags: (state) => state.tags.isShowTags,
     }),
   },
   watch: {

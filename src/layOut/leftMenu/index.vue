@@ -1,5 +1,6 @@
 <template>
   <div>
+    <logo v-if="isShowMenuIcon" :collapse="isCollapse"></logo>
     <el-menu
       :default-active="$route.path"
       class="el-menu-vertical-demo"
@@ -31,7 +32,11 @@
 import routeArr from "@/router/routeArr.js";
 import { mapState } from "vuex";
 import { getThemeColor } from "@/utils";
+import logo from "./logo/logo.vue";
 export default {
+  components: {
+    logo,
+  },
   data() {
     return {
       routeArr,
@@ -42,6 +47,7 @@ export default {
     ...mapState({
       isCollapse: (state) => state.menu.isCollapse, // menu子内容下的isCollapse属性
       theme_bgColor: (state) => state.menu.theme_bgColor, // menu子内容下的主题颜色
+      isShowMenuIcon: (state) => state.menu.isShowMenuIcon, // menu子内容下的isShowMenuIcon是否展示菜单图标部分
     }),
   },
   mounted() {

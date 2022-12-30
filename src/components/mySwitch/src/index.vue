@@ -142,7 +142,7 @@ export default {
       min-width: 54px; // 设置最小宽度
       width: fit-content; // 使用fit-content属性，让宽度随着内容多少自适应
       height: 100%;
-      font-size: 12px;
+      font-size: 15px;
       display: flex;
       // justify-content: justifyContent; // 注意，这里也是通过:style控制文字靠左还是靠右
       align-items: center;

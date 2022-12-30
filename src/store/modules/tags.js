@@ -4,7 +4,8 @@ const state = {
     // 所有到访过的视图
     visitedViews: [],
     // 缓存的视图，根据组件的name属性匹配，默认有几个缓存几个
-    cachedViews: []
+    cachedViews: [],
+    isShowTags: true // 是否展示tags
 };
 
 const mutations = {

@@ -1,6 +1,7 @@
 const state = {
     isCollapse: false,
-    theme_bgColor: ''
+    theme_bgColor: '',
+    isShowMenuIcon: true
 };
 
 const mutations = {
