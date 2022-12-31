@@ -101,6 +101,7 @@ export default {
   padding: 16px; // 加上内边距
   border: 1px solid #e9e9e9;
   position: fixed; // 使用固定定位，使位置靠近顶部并居中
+  z-index: 9999999999;
   top: 20px;
   left: 50%;
   transform: translateX(-50%); // 控制居中
