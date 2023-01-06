@@ -215,6 +215,15 @@ const routeArr = [
             keepAlive: false,
         }
     },
+    {
+        path: "/myText",
+        name: 'myTextName',
+        component: resolve => require(['@/views/myText.vue'], resolve),
+        meta: {
+            title: '文本滚动',
+            keepAlive: false,
+        }
+    },
 ]
 
 export default routeArr

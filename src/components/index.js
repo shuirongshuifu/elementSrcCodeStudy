@@ -26,6 +26,8 @@ import myRightMenu from "./myRightMenu/index";
 import myTree from "./myTree/index";
 import myButton from "./myButton/index";
 import myButtonGroup from "./myButtonGroup/index";
+import myText1 from "./myText1/index";
+import myText2 from "./myText2/index";
 
 
 // 将各个封装的组件使用一个数组保存，便于统一注册
@@ -54,7 +56,9 @@ const components = [
     myRightMenu,
     myTree,
     myButton,
-    myButtonGroup
+    myButtonGroup,
+    myText1,
+    myText2
 ]
 
 // 使用定义注册函数
