@@ -224,6 +224,15 @@ const routeArr = [
             keepAlive: false,
         }
     },
+    {
+        path: "/myWork",
+        name: 'myWorkName',
+        component: resolve => require(['@/views/myWork.vue'], resolve),
+        meta: {
+            title: '前端多线程',
+            keepAlive: false,
+        }
+    },
 ]
 
 export default routeArr

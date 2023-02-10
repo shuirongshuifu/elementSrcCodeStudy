@@ -18,6 +18,9 @@ import './otherComponents/load/index.js'
 import install from './directives' // 引入并使用自定义指令
 Vue.use(install)
 
+import VueWorker from 'vue-worker' // Web worker插件
+Vue.use(VueWorker)
+
 new Vue({
     render: h => h(App),
     router,
