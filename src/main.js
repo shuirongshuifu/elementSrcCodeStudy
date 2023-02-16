@@ -21,6 +21,16 @@ Vue.use(install)
 import VueWorker from 'vue-worker' // Web worker插件
 Vue.use(VueWorker)
 
+import VueLazyload from 'vue-lazyload'  // 引入vue-lazyload插件
+const loadimage = require('./assets/imgLazyload/loading.gif')
+const errorimage = require('./assets/imgLazyload/error.gif')
+Vue.use(VueLazyload, {
+    preLoad: 1.3,  // 加载区域，图片在当前满屏1 再加上往下走的30%的位置的都加载出来
+    error: errorimage.default,  // 加载错误时显示图片
+    loading: loadimage.default, // 加载中显示图片
+    attempt: 3  // 下载图片错误时重连次数
+})
+
 new Vue({
     render: h => h(App),
     router,

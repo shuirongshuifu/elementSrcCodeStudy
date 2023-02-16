@@ -233,6 +233,15 @@ const routeArr = [
             keepAlive: false,
         }
     },
+    {
+        path: "/imgLazyload",
+        name: 'imgLazyloadName',
+        component: resolve => require(['@/views/imgLazyload.vue'], resolve),
+        meta: {
+            title: '图片懒加载',
+            keepAlive: false,
+        }
+    },
 ]
 
 export default routeArr

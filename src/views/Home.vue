@@ -15,7 +15,6 @@
       :backCardStyle="{
         background: '#409EFF',
         color: '#000',
-        cursor: 'pointer',
         display: 'flex',
         'justify-content': 'center',
         'align-items': 'center',
@@ -28,8 +27,8 @@
         </div>
         <div>{{ emoji[index] }}</div>
       </div>
-      <div slot="back" @click="jump(item.path)">
-        <div class="backStyle">
+      <div slot="back">
+        <div class="backStyle" @click="jump(item.path)">
           <div>点下呗...</div>
           <div>{{ yanWords[index] }}</div>
         </div>
@@ -77,6 +76,18 @@ export default {
         "😮",
         "🥱",
         "😓",
+        "🦁",
+        "🐯",
+        "🐺",
+        "🐶",
+        "🦊",
+        "🦝",
+        "🐱",
+        "🐴",
+        "🦄",
+        "🐗",
+        "🐼",
+        "🐘",
       ],
       yanWords: [
         "(ง •̀_•́)ง",
@@ -105,6 +116,17 @@ export default {
         "(•͈˽•͈)  ",
         "ʕ·ᴥ· ʔ  ",
         "༼༎ຶᴗ༎ຶ༽  ",
+        "w(ﾟДﾟ)w",
+        "ヽ(✿ﾟ▽ﾟ)ノ",
+        "(๑•̀ㅂ•́)و✧",
+        "╰(*°▽°*)╯",
+        "♪(^∇^*)",
+        "(u‿ฺu✿ฺ)",
+        "(°ー°〃)",
+        "（´v｀）",
+        "(。・・)ノ",
+        "(ﾉ*･ω･)ﾉ",
+        "o(〃'▽'〃)o",
       ],
     };
   },
@@ -145,6 +167,9 @@ export default {
   .backStyle {
     font-family: "楷体", "楷体_GB2312";
     font-weight: bold;
+  }
+  .backStyle {
+    cursor: pointer;
   }
 }
 </style>
