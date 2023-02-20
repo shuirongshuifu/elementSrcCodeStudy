@@ -1,10 +1,35 @@
 <template>
   <div>
+    <h3>上边的是使用vue-lazyload插件</h3>
+    <h3>下边的是使用自定义指令</h3>
+    <br />
     <div class="imgWrap">
       <div class="imgBox" v-for="img in list">
         <img v-lazy="img.src" />
       </div>
     </div>
+    <h3>分隔线</h3>
+    <h3>分隔线</h3>
+    <h3>分隔线</h3>
+    <h1>白日依山尽</h1>
+    <h1>黄河入海流</h1>
+    <h1>欲穷千里目</h1>
+    <h1>更上一层楼</h1>
+    <h1>白日依山尽</h1>
+    <h1>黄河入海流</h1>
+    <h1>欲穷千里目</h1>
+    <h1>更上一层楼</h1>
+    <h1>白日依山尽</h1>
+    <h1>黄河入海流</h1>
+    <h1>欲穷千里目</h1>
+    <h1>更上一层楼</h1>
+    <h1>白日依山尽</h1>
+    <h1>黄河入海流</h1>
+    <h1>欲穷千里目</h1>
+    <h1>更上一层楼</h1>
+    <img class='imgLazy' v-lazyload="'http://ashuai.work:10000/imgSrc/doupo.png'" />
+    <img class='imgLazy' v-lazyload="'http://ashuai.work:10000/imgSrc/douluo.png'" />
+    <img class='imgLazy' v-lazyload="'http://ashuai.work:10000/imgSrc/tunshi.png'" />
   </div>
 </template>
 
@@ -132,5 +157,9 @@ export default {
   100% {
     opacity: 1;
   }
+}
+.imgLazy {
+  width: 240px;
+  margin-bottom: 12px;
 }
 </style>
