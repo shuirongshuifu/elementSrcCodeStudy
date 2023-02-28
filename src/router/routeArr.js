@@ -242,6 +242,15 @@ const routeArr = [
             keepAlive: false,
         }
     },
+    {
+        path: "/bigData",
+        name: 'bigDataName',
+        component: resolve => require(['@/views/bigData.vue'], resolve),
+        meta: {
+            title: '十万条数据',
+            keepAlive: false,
+        }
+    },
 ]
 
 export default routeArr

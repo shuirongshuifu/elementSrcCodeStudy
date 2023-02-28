@@ -31,6 +31,15 @@ Vue.use(VueLazyload, {
     attempt: 3  // 下载图片错误时重连次数
 })
 
+// 使用无限滚动插件
+import elTableInfiniteScroll from 'el-table-infinite-scroll';
+Vue.use(elTableInfiniteScroll);
+
+// 使用VXETable
+import VXETable from 'vxe-table'
+import 'vxe-table/lib/style.css'
+Vue.use(VXETable)
+
 new Vue({
     render: h => h(App),
     router,
