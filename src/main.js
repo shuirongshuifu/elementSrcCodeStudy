@@ -40,6 +40,20 @@ import VXETable from 'vxe-table'
 import 'vxe-table/lib/style.css'
 Vue.use(VXETable)
 
+// 代码高亮插件
+import hljs from "highlight.js";
+
+// import "highlight.js/styles/github-dark.css"; // 多种样式可选，在node_modules文件夹包中
+import "highlight.js/styles/agate.css"; // 多种样式可选，在node_modules文件夹包中
+
+Vue.directive("highlight", function (el) { // 自定义指令v-highlight
+    let blocks = el.querySelectorAll("pre code"); // 选中其中的所有的pre和code标签
+    blocks.forEach(block => { // 遍历给其设置高亮样式
+        hljs.highlightBlock(block);
+    });
+});
+Vue.prototype.$hljs = hljs; // 也可原型注册使用
+
 new Vue({
     render: h => h(App),
     router,

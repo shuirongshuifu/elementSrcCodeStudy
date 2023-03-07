@@ -15,6 +15,7 @@
     "el-table-infinite-scroll": "^1.0.10",
     "element-ui": "^2.15.12",
     "file-loader": "^6.2.0",
+    "highlight.js": "^11.7.0",
     "lodash": "^4.17.21",
     "nprogress": "^0.2.0",
     "qs": "^6.11.0",

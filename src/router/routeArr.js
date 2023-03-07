@@ -251,6 +251,15 @@ const routeArr = [
             keepAlive: false,
         }
     },
+    {
+        path: "/codeLight",
+        name: 'codeLightName',
+        component: resolve => require(['@/views/codeLight.vue'], resolve),
+        meta: {
+            title: '代码高亮',
+            keepAlive: false,
+        }
+    },
 ]
 
 export default routeArr
