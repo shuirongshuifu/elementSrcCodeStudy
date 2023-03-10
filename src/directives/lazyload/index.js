@@ -17,7 +17,9 @@ export default {
             if (isIntersecting) { 
                 el.src = binding.value
                 // 6. 加载成功就不用管它
-                el.onload = (res) => console.log('加载成功', res); 
+                el.onload = (res) => {
+                    console.log('加载成功', res)
+                }; 
                 // 7. 加载失败了就去做一个错误图片的占位
                 el.onerror = (err) => {
                     console.log('加载失败', err);

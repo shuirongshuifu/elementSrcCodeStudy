@@ -5,12 +5,15 @@ function resolve(dir) {
 
 const CompressionPlugin = require('compression-webpack-plugin');//引入gzip压缩插件
 
+// 引入自己写的插件
+const myPlugin = require('./src/myplugin/myPlugin')
+
 module.exports = {
   lintOnSave: false, //是否开启eslint
   productionSourceMap: false, // 关闭源码映射
   chainWebpack: config => {
     config.resolve.alias.set('@', resolve('src')) //配置别名
-    
+
     config.module.rule("images").test(/\.(jpg|jpeg|png|gif|ico)$/) // 给这些图片类型做压缩
       .use("url-loader") // url-loader要搭配file-loader做图片压缩
       .loader("url-loader")
@@ -48,7 +51,8 @@ module.exports = {
           //是否删除原有静态资源文件，即只保留压缩后的.gz文件，建议这个置为false，还保留源文件。以防：
           // 假如出现访问.gz文件访问不到的时候，还可以访问源文件双重保障
           deleteOriginalAssets: false
-        })
+        }),
+        new myPlugin('i-am-params')
       ],
       // 把chunk-vendors.js进行分包，提升资源加载速度，很有必要
       optimization: {
@@ -79,6 +83,27 @@ module.exports = {
             },
           },
         }
+      },
+      /**
+       * 添加自己写的模块loader
+       * */
+      module: {
+        rules: [
+          /**
+           * 对.vue和.js文件生效，不包含node_modules大文件夹，加载器的位置在
+           * 当前目录下的./src/myLoader/removeConsole.js
+           * */
+          // {
+          //   test: /\.vue$/,
+          //   exclude: /node_modules/,
+          //   loader: path.resolve(__dirname, "./src/myLoader/removeConsole.js")
+          // },
+          // {
+          //   test: /\.js$/,
+          //   exclude: /node_modules/,
+          //   loader: path.resolve(__dirname, "./src/myLoader/removeConsole.js")
+          // }
+        ],
       }
     }
   },
