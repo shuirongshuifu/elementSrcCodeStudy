@@ -260,6 +260,15 @@ const routeArr = [
             keepAlive: false,
         }
     },
+    {
+        path: "/WebSocket",
+        name: 'WebSocketName',
+        component: resolve => require(['@/views/WebSocket.vue'], resolve),
+        meta: {
+            title: 'WebSocket',
+            keepAlive: false,
+        }
+    },
 ]
 
 export default routeArr
