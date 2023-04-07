@@ -30,6 +30,7 @@ import rightMiddleTags from "./layOut/rightMiddleTags";
 import draw from "./setting/index.vue";
 import { mapState } from "vuex";
 import { IsPhone } from "./utils/index";
+import { setWaterMark } from "./utils/waterMark.js";
 export default {
   name: "App",
   components: {
@@ -53,6 +54,7 @@ export default {
     if (IsPhone()) {
       this.$store.dispatch("menu/fold_menu");
     }
+    setWaterMark("有内鬼啊👻👻👻", "终止交易💲💲💲");
   },
   methods: {
     showDrawFn() {

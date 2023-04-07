@@ -1,11 +1,11 @@
 const routeArr = [
     {
-        path: "/clickTableCanEdit",
-        name: "clickTableCanEditName",
-        component: resolve => require(['@/views/otherViews/clickTableCanEdit.vue'], resolve),
+        path: "/myButton",
+        name: 'myButtonName',
+        component: resolve => require(['@/views/myButton.vue'], resolve),
         meta: {
-            title: "双击编辑表格",
-            keepAlive: true,
+            title: '按钮',
+            keepAlive: false,
         }
     },
     {
@@ -189,12 +189,12 @@ const routeArr = [
         }
     },
     {
-        path: "/myButton",
-        name: 'myButtonName',
-        component: resolve => require(['@/views/myButton.vue'], resolve),
+        path: "/clickTableCanEdit",
+        name: "clickTableCanEditName",
+        component: resolve => require(['@/views/otherViews/clickTableCanEdit.vue'], resolve),
         meta: {
-            title: '按钮',
-            keepAlive: false,
+            title: "双击编辑表格",
+            keepAlive: true,
         }
     },
     {

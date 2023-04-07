@@ -34,11 +34,22 @@
         ></my-switch>
       </span>
     </div>
+    <div class="DrawItem">
+      <span>3. 水印</span>
+      <span>
+        <my-switch
+          v-model="isShowWaterMark"
+          openText="ON"
+          closeText="OFF"
+        ></my-switch>
+      </span>
+    </div>
   </my-drawer>
 </template>
 
 <script>
 import { getThemeColor } from "@/utils";
+import { setWaterMark, removeWatermark } from "@/utils/waterMark.js";
 export default {
   watch: {
     isShowMenuIcon(val) {
@@ -53,6 +64,13 @@ export default {
         this.$store.state.tags.isShowTags = true;
       } else {
         this.$store.state.tags.isShowTags = false;
+      }
+    },
+    isShowWaterMark(val) {
+      if (val) {
+        setWaterMark("有内鬼啊👻👻👻", "终止交易💲💲💲");
+      } else {
+        removeWatermark();
       }
     },
   },
@@ -78,6 +96,7 @@ export default {
       ],
       isShowMenuIcon: true,
       isShowTags: true,
+      isShowWaterMark: true,
     };
   },
   methods: {
