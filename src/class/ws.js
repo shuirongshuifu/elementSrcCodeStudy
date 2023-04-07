@@ -86,3 +86,9 @@ class myWebSocket {
 }
 
 export default myWebSocket
+
+/**
+ * 另有成熟的npm包
+ *      ReconnectingWebSocket 
+ *      npm: https://www.npmjs.com/package/reconnecting-websocket
+ * */ 
