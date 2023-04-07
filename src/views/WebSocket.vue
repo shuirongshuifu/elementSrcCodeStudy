@@ -32,7 +32,6 @@
       @click="showMsgs"
       >服务端推送的消息数组</el-button
     >
-
     <br />
     <br />
     <h3 v-for="(item, index) in msgs" :key="index">{{ item }}</h3>
@@ -46,6 +45,7 @@ export default {
   data() {
     return {
       myWs: null,
+      timer: null,
     };
   },
   created() {
@@ -64,7 +64,7 @@ export default {
       this.myWs.closeFn();
     },
     sendsend() {
-      this.myWs.sendFn("111");
+      this.myWs.sendFn("客户端主动发一堆消息");
     },
     showMsgs() {
       console.log("myWs.messageArr", this.myWs.messageArr);

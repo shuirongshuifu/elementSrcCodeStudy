@@ -4,10 +4,12 @@
  * */
 class myWebSocket {
     constructor(url) {
-        // this.url = url || 'ws://localhost:10000/mySocketUrl' // 指定默认ws的地址
-        this.url = url || 'ws://ashuai.work:10000/mySocketUrl' // 指定默认ws的地址
+        this.url = url || 'ws://localhost:10000/mySocketUrl' // 指定默认ws的地址
+        // this.url = url || 'ws://ashuai.work:10000/mySocketUrl' // 指定默认ws的地址
         this.socket = null // 实例化的ws对象
         this.messageArr = [] // 接收服务端推送的消息数组
+        this.connectCount = 3 // 默认断线重连三次
+        this.timer = null // 心跳
     }
     createFn() {
         if (!WebSocket) { // 打印：WebSocket ƒ WebSocket() { [native code] }
@@ -23,10 +25,15 @@ class myWebSocket {
 
         try {
             this.socket = new WebSocket(this.url) // 生成WebSocket实例化对象
+            this.connectCount = 3 // 重新连接相当于初始化 重置之
+            if (this.timer) clearInterval(this.timer)
 
             // 连接开启
-            this.socket.onopen = function (e) {
+            this.socket.onopen = (e) => {
                 console.log('连接成功')
+                this.timer = setInterval(() => {
+                    this.socket.send('心跳监测')
+                }, 3000)
             }
             // 连接错误
             this.socket.onerror = (e) => {
@@ -38,6 +45,18 @@ class myWebSocket {
                 console.log('--->', wsObj.data);
                 this.messageArr.push(wsObj.data)
             }
+            // 服务断开
+            this.socket.onclose = () => {
+                setTimeout(() => {
+                    if (this.connectCount > 0) {
+                        this.connectCount = this.connectCount - 1
+                        console.log('尝试断线重连一次');
+                        this.createFn()
+                    } else {
+                        console.log('断线重连三次机会用完了');
+                    }
+                }, 2000);
+            }
         } catch (error) {
             console.error('出错了', error)
             this.socket = null
@@ -45,6 +64,7 @@ class myWebSocket {
         }
 
     }
+    // 客户端主动发消息
     sendFn(msg) {
         if (!this.socket) {
             console.warn('WebSocket未连接 无法发消息')
@@ -53,6 +73,7 @@ class myWebSocket {
         msg = msg || 'biubiubiu ^_^'
         this.socket.send(msg)
     }
+    // 客户端主动断开，就断开了
     closeFn() {
         if (!this.socket) {
             console.warn('WebSocket未连接 不需要关闭')
