@@ -22,7 +22,7 @@ class myPlugin {
                 - 奥利给
                 - 😄😄😄 
             `
-            compliation.assets['FBI-WARNING.md'] = {
+            compliation.assets['AOLIGEI.md'] = {
                 size() { 
                     return content.length 
                 },

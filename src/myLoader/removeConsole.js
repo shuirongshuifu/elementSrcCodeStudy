@@ -14,7 +14,7 @@
 
 const reg = /(console.log\()(.*)(\))/g;
 module.exports = function (source) {
-    console.log( typeof source );
+    // console.log( typeof source );
     // 匹配console.log，并做一个替换
     source = source.replace(reg, "")
     return source;
