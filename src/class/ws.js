@@ -4,8 +4,8 @@
  * */
 class myWebSocket {
     constructor(url) {
-        this.url = url || 'ws://localhost:10000/mySocketUrl' // 指定默认ws的地址
-        // this.url = url || 'ws://ashuai.work:10000/mySocketUrl' // 指定默认ws的地址
+        // this.url = url || 'ws://localhost:10000/mySocketUrl' // 指定默认ws的地址
+        this.url = url || 'ws://ashuai.work:10000/mySocketUrl' // 指定默认ws的地址
         this.socket = null // 实例化的ws对象
         this.messageArr = [] // 接收服务端推送的消息数组
         this.connectCount = 3 // 默认断线重连三次
@@ -25,7 +25,6 @@ class myWebSocket {
 
         try {
             this.socket = new WebSocket(this.url) // 生成WebSocket实例化对象
-            this.connectCount = 3 // 重新连接相当于初始化 重置之
             if (this.timer) clearInterval(this.timer)
 
             // 连接开启
@@ -50,7 +49,7 @@ class myWebSocket {
                 setTimeout(() => {
                     if (this.connectCount > 0) {
                         this.connectCount = this.connectCount - 1
-                        console.log('尝试断线重连一次');
+                        console.log('尝试断线重连一次', this.connectCount);
                         this.createFn()
                     } else {
                         console.log('断线重连三次机会用完了');
@@ -82,6 +81,9 @@ class myWebSocket {
         this.socket.close()
         this.socket = null
         this.messageArr = []
+        clearInterval(this.timer)
+        this.timer = null
+        this.connectCount = 0
     }
 }
 

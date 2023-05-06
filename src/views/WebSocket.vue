@@ -81,5 +81,8 @@ export default {
 .wsBox {
   width: 100%;
   height: 100%;
+  .el-button {
+    margin-bottom: 12px;
+  }
 }
 </style>
