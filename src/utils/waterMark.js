@@ -1,7 +1,7 @@
 /**  水印添加方法  */
 
 const setWatermark = (str1, str2) => {
-    let id = 'waterMarkingId'
+    let id = 'waterMarkingIdSimple'
 
     if (document.getElementById(id) !== null) {
         document.body.removeChild(document.getElementById(id))
@@ -48,7 +48,7 @@ export const setWaterMark = (str1, str2) => {
 
 // 移除水印方法
 export const removeWatermark = () => {
-    let id = 'waterMarkingId'
+    let id = 'waterMarkingIdSimple'
     if (document.getElementById(id) !== null) {
         document.body.removeChild(document.getElementById(id))
     }

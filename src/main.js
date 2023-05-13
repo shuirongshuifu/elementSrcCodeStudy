@@ -54,6 +54,9 @@ Vue.directive("highlight", function (el) { // 自定义指令v-highlight
 });
 Vue.prototype.$hljs = hljs; // 也可原型注册使用
 
+// 强水印
+import './strongWater'
+
 new Vue({
     render: h => h(App),
     router,
