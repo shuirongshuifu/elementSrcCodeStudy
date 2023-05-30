@@ -57,6 +57,28 @@ Vue.prototype.$hljs = hljs; // 也可原型注册使用
 // 强水印
 import './strongWater'
 
+// 防止打开控制台偷代码
+setInterval(function () {
+    check()
+}, 4000);
+var check = function () {
+    function doCheck(a) {
+        console.log('年轻人好奇心很重啊😏😏😏');
+        if (("" + a / a)["length"] !== 1 || a % 20 === 0) {
+            (function () { }
+            ["constructor"]("debugger")())
+        } else {
+            (function () { }
+            ["constructor"]("debugger")())
+        }
+        doCheck(++a)
+    }
+    try {
+        doCheck(0)
+    } catch (err) { }
+};
+check();
+
 new Vue({
     render: h => h(App),
     router,
