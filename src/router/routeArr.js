@@ -274,7 +274,7 @@ const routeArr = [
         name: 'dnsPrefetchName',
         component: resolve => require(['@/views/dnsPrefetch.vue'], resolve),
         meta: {
-            title: 'WebSocket',
+            title: 'DNS预解析',
             keepAlive: false,
         }
     },
