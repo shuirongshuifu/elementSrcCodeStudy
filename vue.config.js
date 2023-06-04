@@ -93,16 +93,16 @@ module.exports = {
            * 对.vue和.js文件生效，不包含node_modules大文件夹，加载器的位置在
            * 当前目录下的./src/myLoader/removeConsole.js
            * */
-          {
-            test: /\.vue$/,
-            exclude: /node_modules/,
-            loader: path.resolve(__dirname, "./src/myLoader/removeConsole.js")
-          },
-          {
-            test: /\.js$/,
-            exclude: /node_modules/,
-            loader: path.resolve(__dirname, "./src/myLoader/removeConsole.js")
-          }
+          // {
+          //   test: /\.vue$/,
+          //   exclude: /node_modules/,
+          //   loader: path.resolve(__dirname, "./src/myLoader/removeConsole.js")
+          // },
+          // {
+          //   test: /\.js$/,
+          //   exclude: /node_modules/,
+          //   loader: path.resolve(__dirname, "./src/myLoader/removeConsole.js")
+          // }
         ],
       }
     }
