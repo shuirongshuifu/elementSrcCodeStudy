@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>dns预解析脚本</h3>
+    <h3>dns预解析的node脚本</h3>
     <br />
     <img
       class="img1"
@@ -137,5 +137,9 @@
 .img1 {
   width: 360px;
   height: 360px;
+}
+pre {
+  border: 1px solid #999;
+  background-color: #e9e9e9;
 }
 </style>
