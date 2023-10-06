@@ -1,53 +1,29 @@
 <template>
   <div class="rightTop">
-    <i
-      @click="foldFn"
-      :class="isCollapse ? 'el-icon-s-unfold' : 'el-icon-s-fold'"
-      class="iii"
-    ></i>
+    <i @click="foldFn" :class="isCollapse ? 'el-icon-s-unfold' : 'el-icon-s-fold'" class="iii"></i>
     <my-bread style="margin-left: 6px" v-if="!IsPhone" customDivide=">>">
       <my-bread-item :to="{ path: '/' }">首页</my-bread-item>
-      <my-bread-item v-if="$route.path != '/'"
-        >{{ $route.path.slice(1) }}&nbsp;{{
-          $route.meta.keepAlive ? "缓存" : "不缓存"
-        }}</my-bread-item
-      >
+      <my-bread-item v-if="$route.path != '/'">{{ $route.path.slice(1) }}&nbsp;{{
+        $route.meta.keepAlive ? "缓存" : "不缓存"
+      }}</my-bread-item>
     </my-bread>
-    <el-select
-      class="elSelect"
-      :style="{
+    <el-select class="elSelect" :style="{
         width: IsPhone ? '120px' : 'auto',
-      }"
-      v-model="componentsVal"
-      @change="jumpComponents"
-      filterable
-      size="mini"
-      placeholder="饿了么源码学习（仿写）"
-    >
-      <el-option
-        v-for="item in routeArr"
-        :key="item.value"
-        :label="item.meta.title"
-        :value="item.path"
-      >
+      }" v-model="componentsVal" @change="jumpComponents" filterable size="mini" placeholder="饿了么源码学习（仿写）">
+      <el-option v-for="item in routeArr" :key="item.value" :label="item.meta.title" :value="item.path">
       </el-option>
     </el-select>
-    <my-switch
-      v-model="isNight"
-      active-color="#2F2F2F"
-      inactive-color="#ddd"
-      openText="☾"
-      closeText="☼"
-      size="small"
-    ></my-switch>
-    <i
-      :class="[
-        'el-icon-full-screen',
-        'iii2',
-        isFullScreen ? 'full' : 'notFull',
-      ]"
-      @click="fullScreenHandle"
-    ></i>
+    <my-switch v-model="isNight" active-color="#2F2F2F" inactive-color="#ddd" openText="☾" closeText="☼"
+      size="small"></my-switch>
+    <i :class="[
+      'el-icon-full-screen',
+      'iii2',
+      isFullScreen ? 'full' : 'notFull',
+    ]" @click="fullScreenHandle"></i>
+    <span class="barrierFreeBox">
+      <!-- 无障碍开源地址：https://gitee.com/tywAmblyopia/ToolsUI -->
+      <a id="wzayd" title="网站信息无障碍工具条" href="javascript:;" class="wzayd" accesskey="g">无障碍阅读</a>
+    </span>
   </div>
 </template>
 
@@ -148,13 +124,16 @@ export default {
   position: relative;
   z-index: 1000;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
   .iii {
     font-size: 24px;
     cursor: pointer;
   }
+
   .elSelect {
     margin: 0 12px;
   }
+
   .iii2 {
     color: #666;
     cursor: pointer;
@@ -162,11 +141,27 @@ export default {
     transition: all 0.3s;
     font-size: 20px;
   }
+
   .full:hover {
     transform: scale(0.85);
   }
+
   .notFull:hover {
     transform: scale(1.2);
+  }
+
+  .barrierFreeBox {
+    display: inline-block;
+    width: 240px;
+    margin-left: 12px;
+
+    a {
+      color: #67C23A;
+    }
+
+    a:hover {
+      font-weight: 700;
+    }
   }
 }
 </style>

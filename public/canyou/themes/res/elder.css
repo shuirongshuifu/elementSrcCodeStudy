@@ -1,0 +1,98 @@
+/*
+长辈模式：适老化样式，需要根据原网站的样式定制修改.
+*/
+
+.elderClass h1 {
+    line-height: 36px;
+    font-size: 28px;
+}
+
+.elderClass h2 {
+    line-height: 36px;
+    font-size: 28px;
+}
+
+.elderClass div#sidebar h2 {
+    color: #333;
+    line-height: 22px;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.elderClass ul#nav li {
+    background: url("point.jpg") no-repeat left;
+    padding: 8px 0px 8px 13px;
+    width: 187px;
+    color: rgb(204, 0, 0);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+    .elderClass ul#nav li a {
+        font-weight: normal;
+        font-size: 20px;
+    }
+
+.elderClass div#content {
+    border-width: 1px 1px 1px;
+    border-style: solid;
+    border-color: rgb(216, 216, 216);
+    padding: 15px;
+    border-image: none;
+    width: 558px;
+    color: rgb(51, 51, 51);
+    float: right;
+    min-height: 550px;
+    font-size: 20px;
+}
+
+    .elderClass div#content h2 {
+        color: rgb(0, 0, 0);
+        line-height: 22px;
+        font-size: 25px;
+        margin-bottom: 15px;
+    }
+
+.elderClass div#explain {
+    background: rgb(255, 255, 153);
+    padding: 5px 8px;
+    border: 1px dotted rgb(153, 153, 153);
+    border-image: none;
+    width: 540px;
+    line-height: 18px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+    .elderClass div#explain strong {
+        color: rgb(153, 0, 0);
+        font-weight: bold;
+        font-size: 25px;
+    }
+
+.elderClass div#footer div.leftBox {
+    padding: 1px 0px;
+    width: 500px;
+    text-align: left;
+    font-size: 20px;
+}
+
+.elderClass div#footer div.rightBox {
+    padding: 1px 0px;
+    width: 900px;
+    text-align: right;
+    margin-top: -18px;
+    font-size: 20px;
+}
+
+.elderClass .topEnter a {
+    color: #2622d6;
+    font-size: 30px;
+}
+
+.elderClass .wzaColor li {
+    margin-left: 4px;
+    margin-right: 4px;
+    float: left;
+    font-size: 2.0em;
+}
