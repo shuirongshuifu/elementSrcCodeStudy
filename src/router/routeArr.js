@@ -278,6 +278,15 @@ const routeArr = [
             keepAlive: false,
         }
     },
+    {
+        path: "/selectDown",
+        name: 'selectDownName',
+        component: resolve => require(['@/views/selectDown.vue'], resolve),
+        meta: {
+            title: 'el-select触底加载指令',
+            keepAlive: false,
+        }
+    },
 ]
 
 export default routeArr
