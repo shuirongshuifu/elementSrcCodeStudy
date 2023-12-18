@@ -16,7 +16,7 @@ export default {
         // 把监听的句柄挂载到元素身上便于解绑时使用
         el._hanlde = handle
     },
-    unbind() {
+    unbind(el) {
         // 获取滚动容器dom
         let scrollWrap = el.querySelector('.el-select-dropdown .el-scrollbar .el-select-dropdown__wrap')
         // 解绑
