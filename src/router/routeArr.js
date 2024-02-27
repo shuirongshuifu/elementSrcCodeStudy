@@ -287,6 +287,15 @@ const routeArr = [
             keepAlive: false,
         }
     },
+    {
+        path: "/myhtml",
+        name: 'myhtmlName',
+        component: resolve => require(['@/views/myhtml.vue'], resolve),
+        meta: {
+            title: '仿写v-html',
+            keepAlive: false,
+        }
+    },
 ]
 
 export default routeArr

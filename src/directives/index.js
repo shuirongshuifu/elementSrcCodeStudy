@@ -5,6 +5,7 @@ import showshow from "./showshow";
 import load from "./load";
 import lazyload from "./lazyload";
 import down from "./down";
+import myhtml from "./myhtml";
 
 // 自定义指令对象，用于遍历注册
 const directives = {
@@ -14,6 +15,7 @@ const directives = {
     load,
     lazyload,
     down,
+    myhtml,
 }
 
 // 批量注册指令并暴露到main.js中去便于注册
