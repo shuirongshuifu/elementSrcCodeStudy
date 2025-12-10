@@ -1,3 +1,7 @@
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=shuirongshuifu/elementSrcCodeStudy&type=date&legend=top-left)](https://www.star-history.com/#shuirongshuifu/elementSrcCodeStudy&type=date&legend=top-left)
+
 ### 使用步骤
 1. 下载依赖包
 2. 跑起来
