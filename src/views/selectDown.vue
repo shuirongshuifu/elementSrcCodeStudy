@@ -24,7 +24,7 @@ export default {
   methods: {
     async getOptions() {
       // 笔者自己的服务器，给大家提供了一个分页接口
-      let url = `http://ashuai.work/api/pageData?pageIndex=${this.pageIndex}&pageSize=${this.pageSize}`
+      let url = `https://ashuai.work/api/pageData?pageIndex=${this.pageIndex}&pageSize=${this.pageSize}`
       let { data } = await axios.get(url)
       if (data.length == 0) return this.$message('没数据了')
       // 合并一下下拉框数据

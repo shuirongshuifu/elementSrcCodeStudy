@@ -27,9 +27,9 @@
     <h1>黄河入海流</h1>
     <h1>欲穷千里目</h1>
     <h1>更上一层楼</h1>
-    <img class='imgLazy' v-lazyload="'http://ashuai.work:10000/imgSrc/doupo.png'" />
-    <img class='imgLazy' v-lazyload="'http://ashuai.work:10000/imgSrc/douluo.png'" />
-    <img class='imgLazy' v-lazyload="'http://ashuai.work:10000/imgSrc/tunshi.png'" />
+    <img class='imgLazy' v-lazyload="'https://ashuai.work/api/imgSrc/doupo.png'" />
+    <img class='imgLazy' v-lazyload="'https://ashuai.work/api/imgSrc/douluo.png'" />
+    <img class='imgLazy' v-lazyload="'https://ashuai.work/api/imgSrc/tunshi.png'" />
   </div>
 </template>
 
@@ -40,73 +40,73 @@ export default {
     return {
       list: [
         {
-          src: "http://ashuai.work:10000/imgSrc/html.png",
+          src: "https://ashuai.work/api/imgSrc/html.png",
         },
         {
-          src: "http://ashuai.work:10000/imgSrc/css.png",
+          src: "https://ashuai.work/api/imgSrc/css.png",
         },
         {
-          src: "http://ashuai.work:10000/imgSrc/js.png",
+          src: "https://ashuai.work/api/imgSrc/js.png",
         },
         {
-          src: "http://ashuai.work:10000/imgSrc/nodejs.png",
+          src: "https://ashuai.work/api/imgSrc/nodejs.png",
         },
         {
-          src: "http://ashuai.work:10000/imgSrc/webpack.png",
+          src: "https://ashuai.work/api/imgSrc/webpack.png",
         },
         {
-          src: "http://ashuai.work:10000/imgSrc/vue.png",
+          src: "https://ashuai.work/api/imgSrc/vue.png",
         },
         {
-          src: "http://ashuai.work:10000/imgSrc/react.png",
+          src: "https://ashuai.work/api/imgSrc/react.png",
         },
         {
-          src: "http://ashuai.work:10000/imgSrc/angular.png",
+          src: "https://ashuai.work/api/imgSrc/angular.png",
         },
         {
-          src: "http://ashuai.work:10000/imgSrc/ie.png",
+          src: "https://ashuai.work/api/imgSrc/ie.png",
         },
         {
-          src: "http://ashuai.work:10000/imgSrc/chrome.png",
+          src: "https://ashuai.work/api/imgSrc/chrome.png",
         },
         {
-          src: "http://ashuai.work:10000/imgSrc/firefox.png",
+          src: "https://ashuai.work/api/imgSrc/firefox.png",
         },
         {
-          src: "http://ashuai.work:10000/imgSrc/safari.png",
+          src: "https://ashuai.work/api/imgSrc/safari.png",
         },
         {
-          src: "http://ashuai.work:10000/imgSrc/edge.png",
+          src: "https://ashuai.work/api/imgSrc/edge.png",
         },
         {
-          src: "http://ashuai.work:10000/imgSrc/http.png",
+          src: "https://ashuai.work/api/imgSrc/http.png",
         },
         {
-          src: "http://ashuai.work:10000/imgSrc/uniapp.png",
+          src: "https://ashuai.work/api/imgSrc/uniapp.png",
         },
         {
-          src: "http://ashuai.work:10000/imgSrc/wx.png",
+          src: "https://ashuai.work/api/imgSrc/wx.png",
         },
         {
-          src: "http://ashuai.work:10000/imgSrc/leetcode.png",
+          src: "https://ashuai.work/api/imgSrc/leetcode.png",
         },
         {
-          src: "http://ashuai.work:10000/imgSrc/java.png",
+          src: "https://ashuai.work/api/imgSrc/java.png",
         },
         {
-          src: "http://ashuai.work:10000/imgSrc/spring.png",
+          src: "https://ashuai.work/api/imgSrc/spring.png",
         },
         {
-          src: "http://ashuai.work:10000/imgSrc/mybatis.png",
+          src: "https://ashuai.work/api/imgSrc/mybatis.png",
         },
         {
-          src: "http://ashuai.work:10000/imgSrc/redis.png",
+          src: "https://ashuai.work/api/imgSrc/redis.png",
         },
         {
-          src: "http://ashuai.work:10000/imgSrc/mysql.png",
+          src: "https://ashuai.work/api/imgSrc/mysql.png",
         },
         {
-          src: "http://ashuai.work:10000/imgSrc/oracle.png",
+          src: "https://ashuai.work/api/imgSrc/oracle.png",
         },
         {
           src: "占位",

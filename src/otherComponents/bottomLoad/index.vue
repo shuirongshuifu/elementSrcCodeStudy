@@ -49,7 +49,7 @@ export default {
   // 第一步，请求大量数据时候，转成二维数组，分堆分组分块存储
   async created() {
     this.loading = true;
-    const res = await axios.get("http://ashuai.work:10000/bigData");
+    const res = await axios.get("https://ashuai.work/api/bigData");
     this.allTableData = averageFn(res.data.data);
     // this.originalAllTableData = this.allTableData // 也可以存一份原始值，留作备用，都行的
     this.loading = false;

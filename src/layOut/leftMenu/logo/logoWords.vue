@@ -1,5 +1,5 @@
 <template>
-  <a class="dance" href="http://ashuai.work/welcome" target="_blank">
+  <a class="dance" href="https://ashuai.work/welcome" target="_blank">
     <span class="word">a</span>
     <span class="word">s</span>
     <span class="word">h</span>

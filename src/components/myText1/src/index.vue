@@ -98,7 +98,7 @@ export default {
         this.$router.push({
           path: this.url,
         });
-        // window.open("http://ashuai.work/welcome");
+        // window.open("https://ashuai.work/welcome");
       }
     },
   },

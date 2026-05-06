@@ -60,6 +60,9 @@
     },
     "rules": {}
   },
+  "engines": {
+    "node": ">=14.0.0 <17.0.0"
+  },
   "browserslist": [
     "> 1%",
     "last 2 versions",

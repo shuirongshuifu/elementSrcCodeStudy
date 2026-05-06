@@ -1,6 +1,6 @@
 
-// let loadimage = "http://ashuai.work:10000/imgGifSrc/loading.gif" // 服务器加载中图片
-// let errorimage = "http://ashuai.work:10000/imgGifSrc/error.gif" // 服务器加载中图片
+// let loadimage = "https://ashuai.work/api/imgGifSrc/loading.gif" // 服务器加载中图片
+// let errorimage = "https://ashuai.work/api/imgGifSrc/error.gif" // 服务器加载中图片
 
 let loadimage = require('../../assets/imgLazyload/loading.gif')  // 本地加载中图片
 let errorimage = require('../../assets/imgLazyload/error.gif')  // 本地加载失败图片

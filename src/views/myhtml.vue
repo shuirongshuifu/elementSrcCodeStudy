@@ -19,7 +19,7 @@ export default {
     },
     methods: {
         change1() {
-            this.str = `<p><img style=\"width: 190px;\" src=\"http://ashuai.work/static/img/avantar.png\"><br></p>`
+            this.str = `<p><img style=\"width: 190px;\" src=\"https://ashuai.work/static/img/avantar.png\"><br></p>`
         },
         change2() {
             this.str = `<p><b style=\"background-color: rgb(214, 239, 214);\">白日依山尽</b></p><p><i style=\"background-color: rgb(214, 239, 214);\">黄河入海流</i></p><p><u style=\"background-color: rgb(214, 239, 214);\">欲穷千里目</u></p><p><strike style=\"background-color: rgb(214, 239, 214);\">更上一层楼</strike></p>'`

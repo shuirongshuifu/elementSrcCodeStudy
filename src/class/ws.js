@@ -4,8 +4,8 @@
  * */
 class myWebSocket {
     constructor(url) {
-        // this.url = url || 'ws://localhost:10000/mySocketUrl' // 指定默认ws的地址
-        this.url = url || 'ws://ashuai.work:10000/mySocketUrl' // 指定默认ws的地址
+        // this.url = url || 'wss://localhost:10000/mySocketUrl' // 指定默认ws的地址
+        this.url = url || 'wss://ashuai.work:10000/mySocketUrl' // 指定默认ws的地址
         this.socket = null // 实例化的ws对象
         this.messageArr = [] // 接收服务端推送的消息数组
         this.connectCount = 3 // 默认断线重连三次

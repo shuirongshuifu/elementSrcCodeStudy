@@ -16,7 +16,7 @@ export default {
   },
   data() {
     return {
-      logoSrc: "http://ashuai.work/static/img/avantar.png",
+      logoSrc: "https://ashuai.work/static/img/avantar.png",
     };
   },
 };

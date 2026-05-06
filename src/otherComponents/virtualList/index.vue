@@ -66,7 +66,7 @@ export default {
   },
   async created() {
     this.loading = true;
-    const res = await axios.get("http://ashuai.work:10000/bigData");
+    const res = await axios.get("https://ashuai.work/api/bigData");
     this.allListData = res.data.data;
     this.loading = false;
   },

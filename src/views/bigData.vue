@@ -83,7 +83,7 @@ export default {
      * */
     // async plan() {
     //   this.loading = true;
-    //   const res = await axios.get("http://ashuai.work:10000/bigData");
+    //   const res = await axios.get("https://ashuai.work/api/bigData");
     //   this.loading = false;
     //   let twoDArr = averageFn(res.data.data);
     //   for (let i = 0; i < twoDArr.length; i++) {
@@ -99,7 +99,7 @@ export default {
      * */
     async plan() {
       this.loading = true;
-      const res = await axios.get("http://ashuai.work:10000/bigData");
+      const res = await axios.get("https://ashuai.work/api/bigData");
       this.loading = false;
       // 1. 将大数据量分堆
       let twoDArr = averageFn(res.data.data);
